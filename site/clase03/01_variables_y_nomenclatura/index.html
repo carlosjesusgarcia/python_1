@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Clase 3: Tipos, variables, expresiones y asignaciones - Taller de Programación I</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+   
+
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+
+  <meta name="theme-color" content="#2196f3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Taller de Programación I">
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Taller de Programación I</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../programa/" class="nav-link">Programa de la materia</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Clases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../clase01/" class="dropdown-item">Clase 1: Presentación de la materia</a>
+</li>
+                                    
+<li>
+    <a href="../../clase02/" class="dropdown-item">Clase 2: Programas, lenguajes y algoritmos</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Clase 3: Tipos, variables, expresiones y asignaciones</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../clase02/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#clase-3-tipos-variables-expresiones-y-asignaciones" class="nav-link">Clase 3: Tipos, variables, expresiones y asignaciones</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#tipos-de-datos-basicos" class="nav-link">Tipos de datos básicos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#numeros-enteros" class="nav-link">Números enteros</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#numeros-decimales" class="nav-link">Números decimales</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#cadenas-de-caracteres" class="nav-link">Cadenas de caracteres</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#valores-booleanos" class="nav-link">Valores booleanos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#que-es-una-variable" class="nav-link">¿Qué es una variable?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#como-se-crea-una-variable" class="nav-link">¿Cómo se crea una variable?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#consultar-el-tipo-de-un-dato" class="nav-link">Consultar el tipo de un dato</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#mostrar-el-valor-de-una-variable" class="nav-link">Mostrar el valor de una variable</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#las-variables-pueden-cambiar" class="nav-link">Las variables pueden cambiar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#expresiones" class="nav-link">Expresiones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#asignacion-de-diferentes-tipos" class="nav-link">Asignación de diferentes tipos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#reglas-para-nombrar-variables" class="nav-link">Reglas para nombrar variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#convenciones-de-nomenclatura" class="nav-link">Convenciones de nomenclatura</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#comentarios-en-python" class="nav-link">Comentarios en Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-1-reconocer-tipos-de-datos" class="nav-link">Actividad 1: reconocer tipos de datos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-2-crear-variables" class="nav-link">Actividad 2: crear variables</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-3-mejorar-nombres" class="nav-link">Actividad 3: mejorar nombres</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-4-expresiones-y-asignaciones" class="nav-link">Actividad 4: expresiones y asignaciones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-5-seguir-los-cambios" class="nav-link">Actividad 5: seguir los cambios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-6-corregir-errores" class="nav-link">Actividad 6: corregir errores</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#preguntas-de-opcion-multiple" class="nav-link">Preguntas de opción múltiple</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#resumen" class="nav-link">Resumen</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="clase-3-tipos-variables-expresiones-y-asignaciones">Clase 3: Tipos, variables, expresiones y asignaciones</h1>
+<p>En esta clase aprenderemos a representar datos mediante distintos tipos, guardarlos en variables y construir expresiones sencillas en Python.</p>
+<h2 id="tipos-de-datos-basicos">Tipos de datos básicos</h2>
+<p>Los programas trabajan con datos. Cada dato tiene un <strong>tipo</strong>, que determina qué clase de información representa y qué operaciones pueden realizarse con él.</p>
+<p>En Python utilizaremos inicialmente cuatro tipos básicos:</p>
+<table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Nombre en Python</th>
+<th>Ejemplo</th>
+<th>Representa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Número entero</td>
+<td><code>int</code></td>
+<td><code>20</code></td>
+<td>Números sin decimales</td>
+</tr>
+<tr>
+<td>Número decimal</td>
+<td><code>float</code></td>
+<td><code>19.5</code></td>
+<td>Números con decimales</td>
+</tr>
+<tr>
+<td>Cadena de caracteres</td>
+<td><code>str</code></td>
+<td><code>"Python"</code></td>
+<td>Texto</td>
+</tr>
+<tr>
+<td>Booleano</td>
+<td><code>bool</code></td>
+<td><code>True</code></td>
+<td>Verdadero o falso</td>
+</tr>
+</tbody>
+</table>
+<p>Ejemplos:</p>
+<pre><code class="language-python">edad = 20
+precio = 18500.50
+materia = &quot;Taller de Programación I&quot;
+esta_presente = True
+</code></pre>
+<p>Python reconoce automáticamente el tipo del valor asignado a cada variable.</p>
+<h2 id="numeros-enteros">Números enteros</h2>
+<p>El tipo <code>int</code> se utiliza para representar números enteros, es decir, números sin parte decimal:</p>
+<pre><code class="language-python">cantidad_estudiantes = 35
+anio_actual = 2026
+temperatura = -2
+</code></pre>
+<p>Pueden ser positivos, negativos o cero.</p>
+<h2 id="numeros-decimales">Números decimales</h2>
+<p>El tipo <code>float</code> representa números con parte decimal:</p>
+<pre><code class="language-python">precio_cafe = 3500.50
+altura = 1.75
+promedio = 8.25
+</code></pre>
+<p>En Python, la parte decimal se separa mediante un punto, no mediante una coma:</p>
+<pre><code class="language-python">precio = 1250.75
+</code></pre>
+<p>Este ejemplo es incorrecto:</p>
+<pre><code class="language-python">precio = 1250,75
+</code></pre>
+<h2 id="cadenas-de-caracteres">Cadenas de caracteres</h2>
+<p>Una cadena de caracteres o <em>string</em> es un dato utilizado para representar texto. Su tipo en Python es <code>str</code>.</p>
+<p>Debe escribirse entre comillas dobles o simples:</p>
+<pre><code class="language-python">universidad = &quot;UADE&quot;
+barrio = 'Recoleta'
+serie_favorita = &quot;Los simuladores&quot;
+</code></pre>
+<p>Ambos tipos de comillas son válidos. Lo importante es abrir y cerrar la cadena con el mismo tipo de comilla:</p>
+<pre><code class="language-python">materia = &quot;Programación&quot;
+</code></pre>
+<p>El siguiente ejemplo es incorrecto porque comienza con comillas dobles y termina con comillas simples:</p>
+<pre><code class="language-python">materia = &quot;Programación'
+</code></pre>
+<p>Aunque una cadena contenga números, continúa siendo texto:</p>
+<pre><code class="language-python">codigo_postal = &quot;1067&quot;
+telefono = &quot;1123456789&quot;
+</code></pre>
+<h2 id="valores-booleanos">Valores booleanos</h2>
+<p>El tipo <code>bool</code> solamente puede contener dos valores:</p>
+<pre><code class="language-python">True
+False
+</code></pre>
+<p>Estos valores representan verdadero y falso.</p>
+<pre><code class="language-python">curso_iniciado = True
+examen_aprobado = False
+</code></pre>
+<p><code>True</code> y <code>False</code> deben comenzar con mayúscula y no deben escribirse entre comillas.</p>
+<pre><code class="language-python">esta_presente = True
+</code></pre>
+<p>Si escribimos <code>"True"</code> entre comillas, Python lo interpreta como una cadena de texto y no como un valor booleano.</p>
+<h2 id="que-es-una-variable">¿Qué es una variable?</h2>
+<p>Una variable es un nombre que utilizamos para guardar un dato y poder consultarlo o modificarlo más adelante.</p>
+<p>Podemos imaginarla como una etiqueta asociada a un valor. Por ejemplo, un programa para organizar los gastos de una salida podría guardar el precio de una entrada, la cantidad de personas y el lugar elegido:</p>
+<pre><code class="language-python">precio_entrada = 12000
+cantidad_personas = 4
+lugar = &quot;Palermo&quot;
+</code></pre>
+<p>Cada variable guarda un dato diferente:</p>
+<ul>
+<li><code>precio_entrada</code> contiene el número entero <code>12000</code>.</li>
+<li><code>cantidad_personas</code> contiene el número entero <code>4</code>.</li>
+<li><code>lugar</code> contiene la cadena de texto <code>"Palermo"</code>.</li>
+</ul>
+<h2 id="como-se-crea-una-variable">¿Cómo se crea una variable?</h2>
+<p>Para crear una variable, se escribe su nombre, el operador de asignación (<code>=</code>) y el valor que se desea guardar:</p>
+<pre><code class="language-python">nombre_estudiante = &quot;Martina&quot;
+edad = 20
+</code></pre>
+<p>El signo <code>=</code> no significa «es igual a» como en Matemática. En programación significa <strong>asignar</strong>: el valor de la derecha se guarda en la variable de la izquierda.</p>
+<pre><code class="language-python">saldo_subte = 15000
+</code></pre>
+<p>Esta instrucción puede leerse así:</p>
+<blockquote>
+<p>Guardar el valor <code>15000</code> en la variable <code>saldo_subte</code>.</p>
+</blockquote>
+<p>Python no exige palabras especiales como <code>let</code> o <code>const</code>, utilizadas en JavaScript, ni que se indique previamente el tipo de dato.</p>
+<h2 id="consultar-el-tipo-de-un-dato">Consultar el tipo de un dato</h2>
+<p>La función <code>type()</code> permite consultar el tipo de un valor o de una variable:</p>
+<pre><code class="language-python">edad = 20
+precio = 18500.50
+nombre = &quot;Martina&quot;
+esta_presente = True
+
+print(type(edad))
+print(type(precio))
+print(type(nombre))
+print(type(esta_presente))
+</code></pre>
+<p>El resultado será:</p>
+<pre><code class="language-text">&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'str'&gt;
+&lt;class 'bool'&gt;
+</code></pre>
+<h2 id="mostrar-el-valor-de-una-variable">Mostrar el valor de una variable</h2>
+<p>La función <code>print()</code> permite mostrar información en pantalla:</p>
+<pre><code class="language-python">nombre = &quot;Martina&quot;
+edad = 20
+
+print(nombre)
+print(edad)
+</code></pre>
+<p>También puede mostrar texto escrito directamente:</p>
+<pre><code class="language-python">print(&quot;Hola, mundo&quot;)
+</code></pre>
+<p>Si escribimos un texto sin comillas, Python intentará interpretarlo como el nombre de una variable.</p>
+<h2 id="las-variables-pueden-cambiar">Las variables pueden cambiar</h2>
+<p>El valor almacenado en una variable puede reemplazarse durante la ejecución del programa:</p>
+<pre><code class="language-python">saldo_billetera = 25000
+saldo_billetera = 18000
+</code></pre>
+<p>Después de ejecutar ambas instrucciones, <code>saldo_billetera</code> contiene <code>18000</code>. El valor anterior fue reemplazado.</p>
+<p>También podemos utilizar el valor actual de una variable para obtener uno nuevo:</p>
+<pre><code class="language-python">cantidad_estudiantes = 30
+cantidad_estudiantes = cantidad_estudiantes + 2
+</code></pre>
+<p>Después de ejecutar el código, <code>cantidad_estudiantes</code> contiene <code>32</code>.</p>
+<p>Python primero evalúa la expresión situada a la derecha y después asigna el resultado a la variable de la izquierda.</p>
+<h2 id="expresiones">Expresiones</h2>
+<p>Una expresión es una combinación de valores, variables y operadores que Python puede evaluar para producir un resultado.</p>
+<p>Ejemplo:</p>
+<pre><code class="language-python">precio_cena = 32000
+cantidad_personas = 4
+precio_por_persona = precio_cena / cantidad_personas
+</code></pre>
+<p>La expresión:</p>
+<pre><code class="language-python">precio_cena / cantidad_personas
+</code></pre>
+<p>produce el resultado <code>8000.0</code>. Ese resultado se asigna a la variable <code>precio_por_persona</code>.</p>
+<p>Otro ejemplo:</p>
+<pre><code class="language-python">nota_primer_parcial = 8
+nota_segundo_parcial = 6
+promedio = (nota_primer_parcial + nota_segundo_parcial) / 2
+</code></pre>
+<p>La variable <code>promedio</code> guardará el valor <code>7.0</code>.</p>
+<p>Las operaciones con números y cadenas de texto se estudiarán con mayor profundidad en la clase 4.</p>
+<h2 id="asignacion-de-diferentes-tipos">Asignación de diferentes tipos</h2>
+<p>Una variable puede recibir valores de diferentes tipos durante la ejecución:</p>
+<pre><code class="language-python">dato = 25
+dato = &quot;veinticinco&quot;
+</code></pre>
+<p>Después de la segunda asignación, <code>dato</code> contiene una cadena de texto.</p>
+<p>Python permite este cambio, pero no siempre es conveniente. En general, una variable debería conservar el mismo propósito para que el programa sea fácil de comprender.</p>
+<h2 id="reglas-para-nombrar-variables">Reglas para nombrar variables</h2>
+<p>Python establece reglas obligatorias para los nombres de las variables:</p>
+<ol>
+<li>Deben comenzar con una letra o un guion bajo (<code>_</code>), nunca con un número.</li>
+<li>Solo pueden contener letras, números y guiones bajos (<code>_</code>).</li>
+<li>No pueden contener espacios, guiones medios (<code>-</code>) ni otros símbolos.</li>
+<li>Python distingue entre mayúsculas y minúsculas. Por lo tanto, <code>precio</code>, <code>Precio</code> y <code>PRECIO</code> son tres variables diferentes.</li>
+<li>No pueden utilizar palabras reservadas de Python, como <code>if</code>, <code>class</code> o <code>def</code>.</li>
+</ol>
+<h3 id="ejemplos-validos">Ejemplos válidos</h3>
+<pre><code class="language-python">nombre_usuario = &quot;Sofía&quot;
+comision_2 = &quot;Noche&quot;
+precio_total = 45000
+_dato_temporal = 10
+</code></pre>
+<h3 id="ejemplos-invalidos">Ejemplos inválidos</h3>
+<pre><code class="language-python">2_comision = &quot;Noche&quot;       # Comienza con un número.
+precio entrada = 12000      # Contiene un espacio.
+precio-final = 25000        # Contiene un guion medio.
+class = &quot;Python&quot;            # Utiliza una palabra reservada.
+</code></pre>
+<p>Si se incumple alguna de estas reglas, Python puede producir un <code>SyntaxError</code>:</p>
+<pre><code class="language-python">2do_parcial = 8
+</code></pre>
+<pre><code class="language-text">SyntaxError: invalid syntax
+</code></pre>
+<h2 id="convenciones-de-nomenclatura">Convenciones de nomenclatura</h2>
+<p>Las convenciones no son obligaciones del lenguaje. El programa puede funcionar aunque no se respeten.</p>
+<p>Sin embargo, seguirlas hace que el código sea más fácil de leer, corregir y compartir.</p>
+<h3 id="utilizar-snake-case">Utilizar <em>snake case</em></h3>
+<p>En Python, los nombres de variables se escriben normalmente en minúsculas y las palabras se separan con guiones bajos. Este estilo se denomina <em>snake case</em>:</p>
+<pre><code class="language-python">precio_abono_mensual = 18000
+nombre_materia = &quot;Programación I&quot;
+fecha_primer_parcial = &quot;15 de septiembre&quot;
+</code></pre>
+<p>Estas formas no siguen la convención habitual de Python:</p>
+<pre><code class="language-python">precioAbonoMensual = 18000
+PrecioAbonoMensual = 18000
+PRECIOABONOMENSUAL = 18000
+</code></pre>
+<h3 id="elegir-nombres-descriptivos">Elegir nombres descriptivos</h3>
+<p>El nombre debe permitir entender qué representa el dato sin tener que investigar el resto del programa:</p>
+<pre><code class="language-python">p = 18500
+</code></pre>
+<p><code>p</code> podría significar precio, personas, puntos o cualquier otra cosa. Una alternativa más clara sería:</p>
+<pre><code class="language-python">precio_hamburguesa = 18500
+</code></pre>
+<p>En un sistema universitario, <code>nota_primer_parcial</code> resulta más informativo que <code>nota</code>, y mucho más que <code>n</code>:</p>
+<pre><code class="language-python">nota_primer_parcial = 8
+</code></pre>
+<h3 id="evitar-abreviaturas-confusas">Evitar abreviaturas confusas</h3>
+<p>Una abreviatura solo es útil si cualquier persona puede interpretarla fácilmente:</p>
+<pre><code class="language-python">cant_est = 35
+</code></pre>
+<p>Una opción más clara es:</p>
+<pre><code class="language-python">cantidad_estudiantes = 35
+</code></pre>
+<h3 id="evitar-nombres-de-una-sola-letra">Evitar nombres de una sola letra</h3>
+<p>Se recomienda evitar nombres de una sola letra cuando no expresan el propósito de la variable:</p>
+<pre><code class="language-python">x = 56
+</code></pre>
+<p>Una versión más clara podría ser:</p>
+<pre><code class="language-python">minutos_de_viaje = 56
+</code></pre>
+<p>Existen situaciones específicas en las que se utilizan nombres cortos por convención, pero al comenzar es preferible usar nombres descriptivos.</p>
+<h2 id="comentarios-en-python">Comentarios en Python</h2>
+<p>Los comentarios comienzan con el símbolo <code>#</code>. Python ignora todo lo que aparece después de este símbolo en esa línea:</p>
+<pre><code class="language-python"># Calculamos cuánto debe pagar cada persona.
+precio_total = 48000
+cantidad_personas = 4
+precio_por_persona = precio_total / cantidad_personas
+</code></pre>
+<p>Un comentario de varias líneas puede escribirse mediante varios comentarios consecutivos:</p>
+<pre><code class="language-python"># Este programa calcula el presupuesto
+# necesario para una salida grupal
+# durante el fin de semana.
+</code></pre>
+<p>Los comentarios sirven para explicar una decisión, aclarar una parte compleja o dejar un recordatorio. No deben utilizarse para compensar nombres poco claros.</p>
+<pre><code class="language-python"># Precio del plan mensual del gimnasio.
+x = 30000
+</code></pre>
+<p>Es preferible escribir directamente:</p>
+<pre><code class="language-python">precio_mensual_gimnasio = 30000
+</code></pre>
+<h2 id="actividad-1-reconocer-tipos-de-datos">Actividad 1: reconocer tipos de datos</h2>
+<p>Indicá qué tipo de dato tiene cada valor: <code>int</code>, <code>float</code>, <code>str</code> o <code>bool</code>.</p>
+<pre><code class="language-python">25
+&quot;25&quot;
+19.5
+True
+&quot;Buenos Aires&quot;
+False
+0
+</code></pre>
+<h2 id="actividad-2-crear-variables">Actividad 2: crear variables</h2>
+<p>Creá una variable apropiada para guardar cada dato:</p>
+<ol>
+<li>Tu nombre.</li>
+<li>Tu edad.</li>
+<li>El precio de un almuerzo.</li>
+<li>La cantidad de materias que cursás.</li>
+<li>Si tenés computadora personal.</li>
+<li>El nombre de tu carrera.</li>
+</ol>
+<p>Después, mostrá todas las variables mediante <code>print()</code>.</p>
+<h2 id="actividad-3-mejorar-nombres">Actividad 3: mejorar nombres</h2>
+<p>Reescribí las siguientes variables utilizando nombres descriptivos y <em>snake case</em>. Puede haber más de una respuesta correcta.</p>
+<pre><code class="language-python">p = 15000
+cant = 3
+NombreUsuario = &quot;Tomás&quot;
+totalCompra = 45000
+</code></pre>
+<p>Los datos representan:</p>
+<ul>
+<li>El precio de una entrada de cine.</li>
+<li>La cantidad de entradas.</li>
+<li>El nombre de la persona que realizó la compra.</li>
+<li>El importe total de la compra.</li>
+</ul>
+<h2 id="actividad-4-expresiones-y-asignaciones">Actividad 4: expresiones y asignaciones</h2>
+<p>Observá el siguiente programa:</p>
+<pre><code class="language-python">precio_entrada = 12000
+cantidad_entradas = 3
+precio_total = precio_entrada * cantidad_entradas
+</code></pre>
+<p>Respondé:</p>
+<ol>
+<li>¿Qué valores se asignan inicialmente?</li>
+<li>¿Cuál es la expresión que realiza el cálculo?</li>
+<li>¿Qué valor recibe <code>precio_total</code>?</li>
+<li>¿Qué tipo de dato contiene cada variable?</li>
+</ol>
+<h2 id="actividad-5-seguir-los-cambios">Actividad 5: seguir los cambios</h2>
+<p>Sin ejecutar el código, indicá qué valor tendrá cada variable al finalizar:</p>
+<pre><code class="language-python">cantidad = 10
+cantidad = cantidad + 5
+cantidad = cantidad - 2
+</code></pre>
+<p>Después, ejecutá el código para comprobar tu respuesta.</p>
+<h2 id="actividad-6-corregir-errores">Actividad 6: corregir errores</h2>
+<p>Corregí los nombres o valores inválidos:</p>
+<pre><code class="language-python">1er_estudiante = &quot;Lucía&quot;
+precio entrada = 9500
+comision-noche = True
+class = &quot;Python&quot;
+altura = 1,75
+materia = &quot;Programación'
+</code></pre>
+<h2 id="preguntas-de-opcion-multiple">Preguntas de opción múltiple</h2>
+<h3 id="1-cual-es-la-forma-correcta-de-guardar-la-edad-de-un-estudiante">1. ¿Cuál es la forma correcta de guardar la edad de un estudiante?</h3>
+<ul>
+<li>[ ] <code>let edad_estudiante = 20</code></li>
+<li>[ ] <code>const edad_estudiante = 20</code></li>
+<li>[ ] <code>var edad_estudiante = 20</code></li>
+<li>[ ] <code>edad_estudiante = 20</code></li>
+</ul>
+<h3 id="2-que-tipo-de-dato-tiene-el-valor-20">2. ¿Qué tipo de dato tiene el valor <code>20</code>?</h3>
+<ul>
+<li>[ ] <code>str</code></li>
+<li>[ ] <code>float</code></li>
+<li>[ ] <code>int</code></li>
+<li>[ ] <code>bool</code></li>
+</ul>
+<h3 id="3-que-tipo-de-dato-tiene-el-valor-20">3. ¿Qué tipo de dato tiene el valor <code>"20"</code>?</h3>
+<ul>
+<li>[ ] <code>str</code></li>
+<li>[ ] <code>float</code></li>
+<li>[ ] <code>int</code></li>
+<li>[ ] <code>bool</code></li>
+</ul>
+<h3 id="4-cual-de-las-siguientes-afirmaciones-no-es-una-regla-para-nombrar-variables">4. ¿Cuál de las siguientes afirmaciones no es una regla para nombrar variables?</h3>
+<ul>
+<li>[ ] Los nombres deben comenzar con una letra o un guion bajo.</li>
+<li>[ ] Los nombres no distinguen entre mayúsculas y minúsculas.</li>
+<li>[ ] Los nombres no pueden ser palabras reservadas de Python.</li>
+<li>[ ] Los nombres pueden contener letras, números y guiones bajos.</li>
+</ul>
+<h3 id="5-cual-es-el-mejor-nombre-para-guardar-el-precio-mensual-de-una-plataforma-de-streaming">5. ¿Cuál es el mejor nombre para guardar el precio mensual de una plataforma de streaming?</h3>
+<ul>
+<li>[ ] <code>x</code></li>
+<li>[ ] <code>pmp</code></li>
+<li>[ ] <code>PrecioMensualStreaming</code></li>
+<li>[ ] <code>precio_mensual_streaming</code></li>
+</ul>
+<h3 id="6-cual-de-los-siguientes-nombres-produce-un-error-de-sintaxis">6. ¿Cuál de los siguientes nombres produce un error de sintaxis?</h3>
+<ul>
+<li>[ ] <code>nota_parcial_1</code></li>
+<li>[ ] <code>1_nota_parcial</code></li>
+<li>[ ] <code>nota_final</code></li>
+<li>[ ] <code>_nota_temporal</code></li>
+</ul>
+<h3 id="7-cual-es-un-valor-booleano-valido">7. ¿Cuál es un valor booleano válido?</h3>
+<ul>
+<li>[ ] <code>"True"</code></li>
+<li>[ ] <code>true</code></li>
+<li>[ ] <code>True</code></li>
+<li>[ ] <code>"Verdadero"</code></li>
+</ul>
+<h3 id="8-por-que-se-recomienda-evitar-nombres-de-una-sola-letra">8. ¿Por qué se recomienda evitar nombres de una sola letra?</h3>
+<ul>
+<li>[ ] Porque no comunican con claridad el propósito de la variable.</li>
+<li>[ ] Porque Python no permite nombres de una sola letra.</li>
+<li>[ ] Porque siempre producen errores de sintaxis.</li>
+<li>[ ] Porque utilizan más memoria que los nombres largos.</li>
+</ul>
+<h2 id="resumen">Resumen</h2>
+<p>En esta clase aprendimos que:</p>
+<ul>
+<li>Los datos tienen diferentes tipos.</li>
+<li><code>int</code> representa números enteros.</li>
+<li><code>float</code> representa números decimales.</li>
+<li><code>str</code> representa cadenas de texto.</li>
+<li><code>bool</code> representa verdadero o falso.</li>
+<li>Una variable permite guardar un dato.</li>
+<li>El operador <code>=</code> asigna un valor.</li>
+<li>Una expresión produce un resultado.</li>
+<li>Los nombres deben respetar las reglas de Python.</li>
+<li>La convención habitual es utilizar nombres descriptivos en <em>snake case</em>.</li>
+</ul>
+<hr />
+<p><a href="../../clase02/">Anterior: Clase 2 - Programas, lenguajes de programación y algoritmos</a></p>
+<p>La próxima clase estará dedicada a las operaciones con números y cadenas de texto.</p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../assets/pwa.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>

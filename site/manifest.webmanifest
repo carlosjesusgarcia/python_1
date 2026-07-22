@@ -1,0 +1,23 @@
+{
+  "name": "Iniciación a Python",
+  "short_name": "Python",
+  "description": "Apuntes y actividades del curso de iniciación a Python",
+  "start_url": "/python_1/",
+  "scope": "/python_1/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2196f3",
+  "lang": "es-AR",
+  "icons": [
+    {
+      "src": "/python_1/assets/icons/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/python_1/assets/icons/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -4,27 +4,38 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Apuntes, actividades y recursos de la cursada de Taller de Programación I">
         
         
-        
-        <link rel="shortcut icon" href="/img/favicon.ico">
+        <link rel="shortcut icon" href="img/favicon.ico">
         <title>Taller de Programación I</title>
-        <link href="/css/bootstrap.min.css" rel="stylesheet">
-        <link href="/css/fontawesome.min.css" rel="stylesheet">
-        <link href="/css/brands.min.css" rel="stylesheet">
-        <link href="/css/solid.min.css" rel="stylesheet">
-        <link href="/css/v4-font-face.min.css" rel="stylesheet">
-        <link href="/css/base.css" rel="stylesheet">
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/fontawesome.min.css" rel="stylesheet">
+        <link href="css/brands.min.css" rel="stylesheet">
+        <link href="css/solid.min.css" rel="stylesheet">
+        <link href="css/v4-font-face.min.css" rel="stylesheet">
+        <link href="css/base.css" rel="stylesheet">
         <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
         <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
-        <script>hljs.highlightAll();</script> 
+        <script>hljs.highlightAll();</script>
+   
+
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png">
+
+  <meta name="theme-color" content="#2196f3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Taller de Programación I">
+
     </head>
 
-    <body>
+    <body class="homepage">
         <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
             <div class="container">
-                <a class="navbar-brand" href="/.">Taller de Programación I</a>
+                <a class="navbar-brand" href=".">Taller de Programación I</a>
                 <!-- Expander button -->
                 <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
@@ -35,25 +46,25 @@
                         <!-- Main navigation -->
                         <ul class="nav navbar-nav">
                             <li class="nav-item">
-                                <a href="/." class="nav-link">Inicio</a>
+                                <a href="." class="nav-link active" aria-current="page">Inicio</a>
                             </li>
                             <li class="nav-item">
-                                <a href="/programa/" class="nav-link">Programa de la materia</a>
+                                <a href="programa/" class="nav-link">Programa de la materia</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Clases</a>
                                 <ul class="dropdown-menu">
                                     
 <li>
-    <a href="/clase01/" class="dropdown-item">Clase 1: Presentación de la materia</a>
+    <a href="clase01/" class="dropdown-item">Clase 1: Presentación de la materia</a>
 </li>
                                     
 <li>
-    <a href="/clase02/" class="dropdown-item">Clase 2: Programas, lenguajes y algoritmos</a>
+    <a href="clase02/" class="dropdown-item">Clase 2: Programas, lenguajes y algoritmos</a>
 </li>
                                     
 <li>
-    <a href="/clase03/01_variables_y_nomenclatura/" class="dropdown-item">Clase 3: Tipos, variables, expresiones y asignaciones</a>
+    <a href="clase03/01_variables_y_nomenclatura/" class="dropdown-item">Clase 3: Tipos, variables, expresiones y asignaciones</a>
 </li>
                                 </ul>
                             </li>
@@ -65,6 +76,16 @@
                                 <i class="fa fa-search"></i> Search
                             </a>
                         </li>
+                            <li class="nav-item">
+                                <a rel="prev" class="nav-link disabled">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="programa/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
                     </ul>
                 </div>
             </div>
@@ -72,15 +93,58 @@
 
         <div class="container">
             <div class="row">
-
-    <div class="row-fluid">
-      <div id="main-content" class="span12">
-        <h1 id="404-page-not-found" style="text-align: center">404</h1>
-        <p style="text-align: center"><strong>Page not found</strong></p>
-      </div>
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
     </div>
 
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#taller-de-programacion-i" class="nav-link">Taller de Programación I</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#programa-de-la-materia" class="nav-link">Programa de la materia</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#clases" class="nav-link">Clases</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#acceso-desde-el-celular" class="nav-link">Acceso desde el celular</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
 
+<h1 id="taller-de-programacion-i">Taller de Programación I</h1>
+<p>Apuntes, actividades y recursos de la cursada de <strong>Taller de Programación I</strong>.</p>
+<p>La materia introduce los fundamentos de la programación mediante Python. A lo largo de la cursada trabajaremos con algoritmos, variables, operaciones, estructuras de control, funciones, listas, archivos y módulos.</p>
+<h2 id="programa-de-la-materia">Programa de la materia</h2>
+<ul>
+<li><a href="programa/">Consultar el programa, los objetivos y el cronograma</a></li>
+</ul>
+<h2 id="clases">Clases</h2>
+<ol>
+<li><a href="clase01/">Clase 1: Presentación de la materia</a></li>
+<li><a href="clase02/">Clase 2: Programas, lenguajes de programación y algoritmos</a></li>
+<li><a href="clase03/01_variables_y_nomenclatura/">Clase 3: Tipos, variables, expresiones y asignaciones</a></li>
+</ol>
+<p>Las clases siguientes se incorporarán progresivamente a medida que avancemos en la cursada.</p>
+<h2 id="acceso-desde-el-celular">Acceso desde el celular</h2>
+<p>Esta página puede consultarse desde cualquier navegador y también instalarse como aplicación:</p>
+<ul>
+<li><strong>Android:</strong> abrir el menú de Chrome y seleccionar <strong>Instalar aplicación</strong> o <strong>Añadir a pantalla de inicio</strong>.</li>
+<li><strong>iPhone:</strong> abrir la página en Safari, pulsar <strong>Compartir</strong> y seleccionar <strong>Añadir a pantalla de inicio</strong>.</li>
+</ul></div>
             </div>
         </div>
 
@@ -88,14 +152,14 @@
             <hr>
             <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
         </footer>
-        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="js/bootstrap.bundle.min.js"></script>
         <script>
-            var base_url = "/",
+            var base_url = ".",
                 shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
         </script>
-        <script src="/js/base.js"></script>
-        <script src="/assets/pwa.js"></script>
-        <script src="/search/main.js"></script>
+        <script src="js/base.js"></script>
+        <script src="assets/pwa.js"></script>
+        <script src="search/main.js"></script>
 
         <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-lg">
@@ -160,3 +224,8 @@
 
     </body>
 </html>
+
+<!--
+MkDocs version : 1.6.1
+Build Date UTC : 2026-07-22 20:37:28.985854+00:00
+-->

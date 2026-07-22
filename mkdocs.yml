@@ -1,5 +1,5 @@
-site_name: Iniciación a Python
-site_description: Apuntes y actividades del curso de iniciación a Python
+site_name: Taller de Programación I
+site_description: Apuntes, actividades y recursos de la cursada de Taller de Programación I
 
 theme:
   name: mkdocs
@@ -7,8 +7,11 @@ theme:
 
 nav:
   - Inicio: index.md
-  - Clase 1:
-      - Variables y nomenclatura: clase1/01_variables_y_nomenclatura.md
+  - Programa de la materia: programa.md
+  - Clases:
+      - "Clase 1: Presentación de la materia": clase01/index.md
+      - "Clase 2: Programas, lenguajes y algoritmos": clase02/index.md
+      - "Clase 3: Tipos, variables, expresiones y asignaciones": clase03/01_variables_y_nomenclatura.md
 
 extra_javascript:
   - assets/pwa.js
