@@ -1,8 +1,11 @@
-const CACHE_NAME = "python-curso-v1";
+const CACHE_NAME = "taller-programacion-1-v2";
 
 const ARCHIVOS_INICIALES = [
   "/python_1/",
-  "/python_1/clase1/01_variables_y_nomenclatura/",
+  "/python_1/programa/",
+  "/python_1/clase01/",
+  "/python_1/clase02/",
+  "/python_1/clase03/01_variables_y_nomenclatura/",
   "/python_1/manifest.webmanifest",
   "/python_1/assets/icons/icon-192.png",
   "/python_1/assets/icons/icon-512.png",
@@ -25,7 +28,10 @@ self.addEventListener("activate", function (evento) {
       return Promise.all(
         nombres
           .filter(function (nombre) {
-            return nombre !== CACHE_NAME;
+            return (
+              nombre.startsWith("python-curso-") ||
+              nombre.startsWith("taller-programacion-1-")
+            ) && nombre !== CACHE_NAME;
           })
           .map(function (nombre) {
             return caches.delete(nombre);
@@ -45,11 +51,15 @@ self.addEventListener("fetch", function (evento) {
   evento.respondWith(
     fetch(evento.request)
       .then(function (respuesta) {
-        const copia = respuesta.clone();
+        if (respuesta.ok) {
+          const copia = respuesta.clone();
 
-        caches.open(CACHE_NAME).then(function (cache) {
-          cache.put(evento.request, copia);
-        });
+          evento.waitUntil(
+            caches.open(CACHE_NAME).then(function (cache) {
+              return cache.put(evento.request, copia);
+            })
+          );
+        }
 
         return respuesta;
       })
