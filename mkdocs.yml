@@ -1,0 +1,6 @@
+site_name: Iniciación a Python
+site_description: Apuntes y actividades del curso de iniciación a Python
+
+nav:
+  - Clase 1:
+      - Variables y nomenclatura: clase1/01_variables_y_nomenclatura.md
