@@ -1,1477 +1,516 @@
-# Tema 0: Introducción a la programación y primeros pasos con Python
+# 00 - Introducción y primeros conceptos
 
-## ¿Para qué sirve este tema?
-
-Este tema presenta las ideas necesarias para empezar a programar. No hace falta tener conocimientos previos: vamos a partir de problemas cotidianos, aprenderemos a expresar soluciones mediante algoritmos y escribiremos programas sencillos en Python.
-
-Los conceptos de variables, tipos de datos y entrada de información se presentan de manera inicial. Más adelante se estudiarán con mayor profundidad.
-
-## Objetivos de aprendizaje
-
-Al finalizar el tema, vas a poder:
-
-- explicar qué significa programar;
-- reconocer la entrada, el procesamiento y la salida de un programa;
-- identificar los componentes generales de una computadora;
-- distinguir hardware, software, sistema operativo, lenguaje e intérprete;
-- describir las etapas básicas del desarrollo de un programa;
-- escribir algoritmos ordenados, precisos y finitos;
-- diferenciar *testing*, *debugging* y *bug*;
-- explicar por qué usamos Python;
-- crear, guardar y ejecutar un archivo `.py` en Thonny;
-- usar `print()` para mostrar información;
-- usar `input()` para recibir información;
-- guardar valores en variables;
-- reconocer los tipos `str`, `int`, `float` y `bool`;
-- consultar un tipo mediante `type()`;
-- producir mensajes con f-strings;
-- usar comentarios, `\n` y `\t`;
-- consultar documentación y utilizar la inteligencia artificial con criterio.
+Taller de programación 2025 
 
 ---
 
-## 1. ¿Qué es programar?
+## ***INTRODUCCIÓN A LA PROGRAMACIÓN***
 
-**Programar** consiste en analizar un problema, diseñar una solución y expresarla mediante instrucciones que una computadora pueda ejecutar.
+### ***Conozcamos algunos conceptos***
 
-La computadora no interpreta nuestras intenciones. Si una instrucción falta, está desordenada o es ambigua, el resultado puede ser incorrecto.
+*Pero antes… ¿Qué conocen sobre programación?*
 
-Podemos programar para:
-
-- calcular el promedio de las notas de un curso;
-- registrar gastos;
-- organizar turnos;
-- buscar una película en una biblioteca;
-- analizar respuestas de una encuesta;
-- calcular el precio de una compra;
-- automatizar tareas repetitivas;
-- crear una aplicación, un videojuego o un sitio web.
-
-Programar no es solamente escribir código. El código aparece después de comprender el problema y pensar una solución.
-
-### Programa y aplicación
-
-Un **programa informático** es un conjunto de instrucciones y datos que una computadora utiliza para realizar una tarea. Una aplicación puede estar formada por uno o varios programas relacionados.
-
-Por ejemplo, una aplicación de transporte puede consultar recorridos, calcular tiempos, mostrar un mapa y guardar lugares frecuentes.
-
-### Pausa para pensar
-
-Elegí una aplicación que uses habitualmente y respondé:
-
-1. ¿Qué problema resuelve?
-2. ¿Qué datos recibe?
-3. ¿Qué resultados muestra?
+¿Qué es programar?
 
 ---
 
-## 2. Entrada, procesamiento y salida
+***Componentes básicos de un programa***
 
-En un programa básico suelen aparecer tres componentes:
+!image.png
 
-1. **Entrada:** información que recibe el programa.
-2. **Procesamiento:** operaciones que realiza con esa información.
-3. **Salida:** resultado que produce.
+***Ciclo de desarrollo de un programa***
 
-### Ejemplo: dividir el gasto de una salida
+!image.png
 
-- **Entrada:** importe total y cantidad de personas.
-- **Procesamiento:** dividir el importe por la cantidad de personas.
-- **Salida:** importe que debe pagar cada persona.
+1. **Definición del problema:**Entender qué debe hacer el programa.
+2. **Análisis del problema:** ¿Qué debería poder introducir el usuario? ¿Cómo llega el programa a una respuesta? ¿Qué resultados da el programa?
+3. **Definir la estrategia de solución:** Pasos necesarios para pasar del análisis del problema a la solución mediante un programa. Incluye definir qué elementos, tendría (variables) qué acciones/secuencias necesito realizar
+4. **Diseño del algoritmo:** Las instrucciones de un lenguaje de programación se denominan colectivamente código. El código debe ser una traducción de las instrucciones desarrolladas en el lenguaje de programación
 
-```text
-Entrada → Procesamiento → Salida
-```
+*Ejemplo:*
 
-La entrada no siempre procede del teclado. También puede llegar desde:
+1. ***Definición del problema:** No conozco los ingredientes de los productos de consumo*
+2. ***Análisis del problema:** ¿Qué datos necesita conocer el usuario? ¿Cómo llega el programa a esos datos? ¿Qué resultados da el programa y cómo se los muestra al usuario?*
+3. ***Definir la estrategia de solución:** Pasos necesarios para pasar del análisis del problema a la solución mediante un programa. Incluye definir qué elementos, tendría (variables) qué acciones/secuencias necesito realizar*
+4. ***Diseño del algoritmo:** Las instrucciones de un lenguaje de programación se denominan colectivamente código. El código debe ser una traducción de las instrucciones desarrolladas en el lenguaje de programación*
 
-- un archivo;
-- una cámara;
-- un micrófono;
-- un sensor;
-- una base de datos;
-- otro programa.
+***Otras acciones:***
 
-La salida tampoco tiene que ser texto en una pantalla. Puede ser un sonido, una imagen, un archivo nuevo, una impresión o una orden enviada a otro dispositivo.
+**Testing y debugging** - Localizar y eliminar cualquier error en el programa
 
-### Ejemplo: acceso a un edificio
+- **Testing** es el proceso de encontrar errores en un programa
+- **Debugging** es el proceso de eliminar los errores de un programa
 
-| Etapa | Ejemplo |
-|---|---|
-| Entrada | Código QR presentado por una persona |
-| Procesamiento | Verificación del código y del horario autorizado |
-| Salida | Acceso permitido o rechazado |
+Un error en un programa se denomina **bug**
+
+.
+
+!image.png
 
 ---
 
-## 3. ¿Qué ocurre dentro de una computadora?
+***MI PRIMER PROGRAMA***
 
-Una computadora combina **hardware** y **software**.
+***Características del lenguaje***
 
-### Hardware
+- Python es un lenguaje de programación **interpretado** y **multiplataforma** cuya filosofía hace hincapié en una sintaxis que favorezca un código legible
+- Se trata de un lenguaje de programación **multiparadigma**, ya que soporta **orientación a objetos**, **programación imperativa** y, en menor medida, programación funcional
+- Característica destacada, que se trata de un lenguaje de **propósito general**
 
-El hardware está formado por los componentes físicos:
+***Ventajas***
 
-- **procesador o CPU:** ejecuta instrucciones y realiza operaciones;
-- **memoria RAM:** conserva temporalmente los datos y programas que están en uso;
-- **almacenamiento:** guarda archivos y programas de manera persistente, por ejemplo en un SSD;
-- **dispositivos de entrada:** teclado, mouse, cámara o micrófono;
-- **dispositivos de salida:** pantalla, parlantes o impresora;
-- **placa de red:** permite comunicarse con otros equipos.
+- Libre y gratuito (OpenSource)
+- Fácil de leer, parecido a pseudocódigo
+- Aprendizaje relativamente fácil y rápido: claro, intuitivo, etc.
+- Alto nivel
+- Alta Productividad: simple y rápido
+- Tiende a producir un buen código: orden, limpieza, elegancia, flexibilidad
+- Multiplataforma. Portable
 
-### Software
+***y más ventajas***
 
-El software incluye los programas y datos:
+- Interactivo, modular, dinámico
+- Librerías extensivas («pilas incluídas»)
+- Gran cantidad de librerías de terceros
+- Extensible (C++, C, …) y «embebible»
+- Gran comunidad, amplio soporte
+- Interpretado
+- Tipado dinámico
+- Multiparadigma: programación imperativa, orientada a objetos, funciona
 
-- **sistema operativo:** administra el hardware y permite ejecutar aplicaciones;
-- **aplicaciones:** realizan tareas para las personas;
-- **lenguajes y herramientas de programación:** permiten crear otros programas.
+***Compilación e interpretación***
 
-### Del código al resultado
+Muchos lenguajes necesitan ***compilar (traducir)*** nuestro programa a una forma que la máquina entienda
 
-Cuando ejecutamos un programa en Python ocurre, de manera simplificada, lo siguiente:
+!image.png
 
-```text
-Persona
-  ↓ escribe
-Código fuente
-  ↓ procesa
-Intérprete de Python
-  ↓ solicita recursos
-Sistema operativo
-  ↓ administra
-Hardware
-  ↓ produce
-Resultado
-```
+En cambio, Python se **interpreta directamente en instrucciones de máquina**
 
-No hace falta memorizar todos los detalles internos. Lo importante es comprender que el código necesita un programa capaz de interpretarlo y una computadora capaz de ejecutarlo.
+!image.png
 
 ---
 
-## 4. Del problema al programa
+### ***🔮 Documentación***
 
-El desarrollo de un programa incluye varias etapas. En proyectos pequeños algunas pueden hacerse rápidamente, pero ninguna desaparece por completo.
+La documentación oficial de Python es una **guía completa y exhaustiva** que sirve como **recurso esencial** para programadores, desde principiantes hasta expertos. Esta valiosa fuente de información proporciona detalles precisos sobre el lenguaje de programación Python cubriendo todos los aspectos, desde la sintaxis básica hasta las funcionalidades más avanzadas.
 
-### 1. Definir el problema
+.
 
-Hay que expresar con claridad qué necesidad queremos resolver.
+!image.png
 
-> Una persona quiere consultar los ingredientes de un producto antes de comprarlo.
+**https://docs.python.org/es/3/**
 
-### 2. Analizar el problema
+- ***Guía de Referencia:** Serie de referencias detalladas de las bibliotecas y módulos estándar de Python, con explicaciones claras de las funciones y métodos disponibles.*
+- ***Tutorial para Principiantes:** Tutorial introductorio que guía a los nuevos programadores. “Desde cero”*
+- ***Guías de Estilo y Buenas Prácticas:** Explica las convenciones de estilo de código recomendadas y las mejores prácticas de programación que ayudarán a mejorar la legibilidad y mantenimiento del código.*
+- ***Recursos Avanzados:** Posee recursos avanzados para desarrolladores experimentados, como la manipulación de módulos de bajo nivel, creación de extensiones y otras técnicas avanzadas.*
+- *La documentación de Python es **mantenida por la comunidad y actualizada regularmente** para reflejar las últimas versiones del lenguaje.*
 
-Identificamos:
+***Recursos a leer***
 
-- qué datos conocemos;
-- qué datos faltan;
-- qué operaciones son necesarias;
-- qué resultado esperamos;
-- qué situaciones especiales pueden aparecer.
+A continuación les compartimos algunas fuentes para complementar sus estudios sobre Python durante la cursada:
 
-### 3. Diseñar la estrategia
+- https://aprendepython.es/
+- https://ellibrodepython.com/
+- https://argentinaenpython.com/quiero-aprender-python/TutorialPython3.pdf
+- https://argentinaenpython.com/quiero-aprender-python/aprenda-a-pensar-como-un-programador-con-python.pdf
 
-Pensamos una solución general antes de elegir instrucciones concretas de Python.
+***Recursos donde hacer consultas***
 
-### 4. Escribir el algoritmo
+**https://www.google.com/**
 
-Ordenamos la solución mediante pasos precisos.
-
-### 5. Codificar
-
-Traducimos el algoritmo a un lenguaje de programación.
-
-### 6. Probar
-
-Ejecutamos el programa con distintos datos y comparamos el resultado obtenido con el esperado.
-
-### 7. Depurar
-
-Buscamos la causa de los errores y la corregimos.
-
-### 8. Documentar y mantener
-
-Explicamos las decisiones importantes y modificamos el programa cuando cambian las necesidades.
-
-### Ejemplo completo
-
-**Problema:** consultar los ingredientes de un producto.
-
-**Entrada:** nombre o código del producto.
-
-**Procesamiento:** búsqueda en una colección de productos.
-
-**Salida:** lista de ingredientes o aviso de producto no encontrado.
-
-**Algoritmo inicial:**
-
-1. Solicitar el nombre o el código.
-2. Buscar el producto.
-3. Si el producto existe, obtener sus ingredientes.
-4. Mostrar los ingredientes.
-5. Si no existe, mostrar un aviso.
-6. Finalizar.
+**https://stackoverflow.com/**
 
 ---
 
-## 5. Algoritmos
+***Recursos: usos y advertencias del uso de IA***
 
-Un **algoritmo** es una secuencia ordenada, precisa y finita de instrucciones que permite resolver un problema o realizar una tarea.
+Breve definición de la IA: La inteligencia artificial (IA) se refiere a **la capacidad de las máquinas o programas de computadora para realizar tareas que normalmente requieren inteligencia humana**. Estas tareas incluyen el aprendizaje, el razonamiento, la resolución de problemas, la percepción visual y auditiva, el reconocimiento del lenguaje natural y la toma de decisiones.
 
-Un buen algoritmo debe ser:
+.
 
-- **ordenado:** los pasos siguen una secuencia lógica;
-- **preciso:** cada instrucción indica qué debe hacerse;
-- **no ambiguo:** no admite interpretaciones contradictorias;
-- **finito:** termina después de una cantidad limitada de pasos;
-- **eficaz:** conduce al resultado buscado.
+!image.png
 
-### Ejemplo cotidiano
+En lugar de seguir instrucciones programadas específicas, **los sistemas de inteligencia artificial utilizan algoritmos y modelos matemáticos** para analizar datos y aprender patrones.
 
-Algoritmo para llegar en subte desde San Telmo hasta una clase en Recoleta:
+*Fuente: chatGPT*
 
-1. Consultar el recorrido antes de salir.
-2. Dirigirse a la estación de origen.
-3. Verificar que la tarjeta SUBE tenga saldo.
-4. Ingresar a la estación.
-5. Comprobar la línea y el sentido del viaje.
-6. Subir a la formación correcta.
-7. Bajar en la estación planificada.
-8. Caminar hasta el destino.
-9. Finalizar.
+***Algunas observaciones:***
 
-Si eliminamos el paso 5, una persona podría entrar a la línea correcta y viajar en el sentido contrario. La precisión importa.
+- **La IA emula la inteligencia humana y fue pensada por humanos**
 
-### Instrucciones y flujo
+Entonces, no es perfecta y tiene sus limitaciones. Puede tener sesgos, errores, vacíos de información. Es importante ser críticos a la hora de usarla.
 
-Una instrucción puede:
+- **La IA no es la respuesta a todos los problemas**
 
-- transformar datos;
-- producir una salida;
-- solicitar una entrada;
-- modificar el orden de ejecución.
+Ni la IA ni ninguna otra tecnología aplicada a la educación. Sí es una herramienta poderosa y novedosa que puede ayudar a mejorar el aprendizaje y personalizar la enseñanza.
 
-En temas posteriores aprenderemos instrucciones como `if`, `while` y `for`, capaces de tomar decisiones o repetir acciones. Por ahora podemos mencionarlas en un algoritmo escrito en lenguaje cotidiano sin programarlas.
-
-### Ejemplo con una repetición y una decisión
-
-1. Encender el horno a 180 °C.
-2. Preparar la mezcla.
-3. Colocar la mezcla en una bandeja.
-4. Introducir la bandeja en el horno.
-5. Esperar el tiempo inicial.
-6. **Mientras** la preparación siga húmeda, cocinar unos minutos más.
-7. **Si** está cocida, retirarla.
-8. Esperar hasta que se enfríe.
-9. Servir.
-10. Finalizar.
-
-Este algoritmo todavía no es código Python. Es una descripción ordenada de la solución.
+*Fuente: "Inteligencia Artificial para Educadores", Pablo Bongiovanni. Edición ampliada (mayo 2023)*
 
 ---
 
-## 6. Testing, debugging y bugs
+### ***🖥Entorno de desarrollo integrado (IDE)***
 
-Los errores son una parte normal del aprendizaje y del desarrollo.
+Vamos a utilizar un entorno de desarrollo integrado. Mejor conocido por su nombre en inglés, *Integrated Development Environment* (**IDE**)
 
-- **Testing o prueba:** proceso planificado para comprobar cómo se comporta un programa y encontrar errores.
-- **Debugging o depuración:** proceso de localizar la causa de un error y corregirla.
-- **Bug:** defecto que produce un comportamiento incorrecto o inesperado.
+En general, consiste en **un editor de código fuente**, herramientas de construcción automáticas y un depurador.
 
-### Tres clases iniciales de errores
+Para Python hay muchos IDE posibles. Estos son los más recomendados: 
 
-#### Error de sintaxis
+**Opcion off line**
 
-El código no respeta las reglas de escritura del lenguaje.
+Este recurso es útil cuando no tenemos acceso a internet
 
-```python
-print("Hola"
-```
+🔗Thonny
 
-Falta cerrar el paréntesis.
+**Opcion off line + Extenciones**
 
-#### Error de ejecución
+Este recurso cuando no tenemos acceso a internet
 
-El programa comienza a ejecutarse, pero encuentra una operación imposible.
+Visual Studio Code + Python.
 
-```python
-print(10 / 0)
-```
+🔗https://www.python.org/
 
-No se puede dividir por cero.
+🔗https://code.visualstudio.com/
 
-#### Error lógico
+**Opcion on line**
 
-El programa se ejecuta, pero la solución está mal planteada.
+**Google Colab** es una plataforma en línea gratuita proporcionada por Google que permite escribir y ejecutar código Python directamente desde un navegador y agurdar cambios en tiempo real. 
 
-```python
-print(10 + 2)  # Se quería calcular 10 por 2
-```
-
-### Probar no es ejecutar una sola vez
-
-Si un programa divide un gasto entre varias personas, conviene probar:
-
-- un caso habitual: `48000` entre `4`;
-- una sola persona;
-- un total con decimales;
-- cero personas;
-- un dato escrito con letras;
-- un valor negativo.
-
-No todos esos casos serán resueltos todavía. Identificarlos ya forma parte del análisis.
+🔗https://colab.google/
 
 ---
 
-## 7. Lenguajes de programación
+### *📀Iniciando con Google Colab*
 
-Un **lenguaje de programación** posee reglas, palabras y símbolos que permiten escribir instrucciones ejecutables.
+Esta herramienta nos acompañará a los largo de la cursada. Cosas a tener en cuenta:
 
-Existen muchos lenguajes porque los problemas, los entornos y los objetivos son diferentes. La elección puede depender de:
+- Tener una cuenta de google es decir @gmail
+- Asegurarse de tener suficiente espacio en Drive. De no tener tanto espacio **recomendaros crear una nueva cuenta de gmail** para tener una cantidad de espacio cómodo
 
-- el tipo de aplicación;
-- las herramientas disponibles;
-- el rendimiento necesario;
-- el sistema donde funcionará;
-- los conocimientos del equipo;
-- la comunidad y la documentación;
-- el costo y las licencias.
+**Primeros pasos:** 
 
-En esta materia trabajaremos con Python.
+1. Iniciar seción en una cuenta google. Se recomienda utilizar el navegador Chrome
+2. Ir  🔗 https://colab.google/
+3. Hacer clic en *New Notebook* arriba a la derecha
 
----
+!colab1.gif
 
-## 8. ¿Qué es Python?
+1. Dentro del nuevo documento modificar el nombre del archivo
 
-Python es un lenguaje de programación de propósito general. Se utiliza en educación, automatización, desarrollo web, análisis de datos, ciencia e inteligencia artificial, entre otras áreas.
+!colab2.gif
 
-Lo elegimos porque:
+¡Listo! Ya tenemos preparado el documento para comenzar. Veamos sus partes más importantes y las que más vamos a utilizar.
 
-- posee una sintaxis relativamente clara;
-- permite concentrarse en la lógica;
-- es libre y gratuito;
-- funciona en Windows, Linux y macOS;
-- puede usarse sin conexión permanente;
-- tiene documentación extensa;
-- dispone de una comunidad amplia;
-- admite diferentes formas de organizar programas.
+!colab3.gif
 
-Python es:
+Notebookc de Google Colab funciona como una larga hoja de un cuaderno y que tiene renglones. Cada vez que se queira escribir un nuevo renglon en esta hoja de cuaderno podremos seleccionar si se va a escribir código o texto. 
 
-- **de alto nivel:** permite escribir instrucciones más cercanas al razonamiento humano que al funcionamiento eléctrico del procesador;
-- **multiplataforma:** un mismo programa puede adaptarse a distintos sistemas;
-- **de propósito general:** no está limitado a una única clase de problemas;
-- **de tipado dinámico:** el tipo está asociado con el valor y Python lo determina durante la ejecución;
-- **multiparadigma:** admite diferentes estilos de programación.
+- **Renglón de código:** esta opción viene predeterminada y viene con un mensaje automático a modo de guia que dice *Comienza a programar o generar con IA*
+- Dentro de ese renlgón hay un ícono de **Play ▶** que es como indicar *darle acción* al código y se ejecute.
 
-Durante el inicio trabajaremos principalmente con una secuencia de instrucciones ejecutadas de arriba hacia abajo.
+Veamos un ejemplo: 
 
-### Código fuente e intérprete
+!colab4.gif
 
-El **código fuente** es el texto escrito por una persona. Los archivos de Python suelen terminar en `.py`.
+- Renglón de texto: esta opción permite escribir texto en modo **markdown**, esto quiere decir que  convierte el texto plano en contenido estructurado como encabezados, listas, enlaces, imágenes y bloques de código. Nos permite editarlo con ciertas claves (algo similar a la edicion de texto de WhatsApp) y ver el resultado en una previsualización.
 
-El **intérprete de Python** procesa y ejecuta las instrucciones.
+Veamos un ejemplo:
 
-```text
-archivo programa.py → intérprete de Python → resultado
-```
+!colab5.gif
 
-Decir que Python es “interpretado” es una simplificación útil. La implementación más utilizada transforma internamente el código y lo ejecuta mediante una máquina virtual. Para comenzar alcanza con saber que necesitamos Python o un entorno que ya lo incluya.
+💫 Acá lo divertido es escribir y probar todas las ediciones posibles. Se darán cuanta de que debajo de cada renglon podemos agregar más renglones y elegir entre codigo o texto, se pueden eliminar o cambiar el orden. *A medida que se avancen con las clases esto se hará más comodo de utilizar.*  💨
 
 ---
 
-## 9. Entornos de trabajo
+***Algoritmos***
 
-Un **IDE** o entorno de desarrollo integrado reúne herramientas para escribir, ejecutar y depurar código.
+https://youtu.be/U3CGMyjzlvM
 
-### Thonny: opción principal
+Un algoritmo es una secuencia de instrucciones o reglas definidas y no-ambiguas, ordenadas y finitas que permite solucionar un problema
 
-Thonny está diseñado para aprender Python:
+**¿Conocen algún algoritmo de la vida cotidiana?**
 
-- funciona localmente;
-- es gratuito;
-- presenta una interfaz sencilla;
-- incluye Python en su instalación habitual;
-- posee consola y depurador;
-- permite observar la ejecución paso a paso.
+Veamos una receta para preparar galletitas y tratemos de obtener un algoritmo para prepararlas.
 
-Sitio oficial: [thonny.org](https://thonny.org/)
+Ingredientes: 3 huevos, 250 gramos de harina, 250 gramos de azúcar
 
-### Primeros pasos en Thonny
+1. **Mientras** no estén espumosos, batir los huevos junto con el azúcar,
+2. Agregar la harina en forma envolvente sin batir.
+3. Batir suavemente.
+4. Poner en una bandeja para hornear.
+5. Colocar en el horno a 180 grados.
+6. **Si** al clavar un cuchillo y sale húmedo, **entonces** ir a retirar del horno.
+7. **Mientras** no esté frío, esperar.
+8. Desmoldar y servir.
 
-1. Abrí Thonny.
-2. Seleccioná **Archivo → Nuevo**.
-3. Escribí:
+**Fin**
 
-   ```python
-   print("Hola, Python")
-   ```
+Una instrucción es una operación que:
 
-4. Guardá el archivo como `tema00_primer_programa.py`.
-5. Elegí una carpeta dedicada a la materia.
-6. Ejecutá con el botón correspondiente o con `F5`.
-7. Observá el resultado en la consola.
+**Transforma los datos, o bien.**
 
-Usá nombres de archivo breves y descriptivos:
-
-```text
-tema00_saludo.py
-actividad_nombre.py
-presentacion.py
-```
-
-Evitá nombres como:
-
-```text
-cosas.py
-nuevo nuevo final.py
-archivo1.py
-```
-
-### Visual Studio Code
-
-Visual Studio Code es un editor más amplio y extensible. Para trabajar con Python requiere instalar Python y la extensión correspondiente. Será útil más adelante, pero Thonny reduce la configuración inicial.
-
-### Google Colab
-
-Google Colab permite escribir y ejecutar Python desde el navegador. El documento se organiza en celdas de código y de texto.
-
-Puede ser útil:
-
-- en una computadora donde no se permite instalar software;
-- para compartir temporalmente una práctica;
-- para trabajar con cuadernos que combinan explicación y código.
-
-Tiene límites:
-
-- necesita conexión;
-- requiere una cuenta;
-- guarda normalmente en servicios externos;
-- una celda puede ejecutarse fuera de orden y conservar estados anteriores.
-
-Por eso conviene conservar los ejercicios importantes como archivos `.py` locales.
+**Modifica el flujo de ejecución.**
 
 ---
 
-## 10. Primeras salidas con `print()`
-
-`print()` es una **función incorporada** que muestra información en la consola.
-
-```python
-print("Hola, mundo")
-```
-
-Resultado:
-
-```text
-Hola, mundo
-```
-
-En la instrucción:
-
-- `print` es el nombre de la función;
-- los paréntesis contienen la información que recibe;
-- `"Hola, mundo"` es una cadena de texto;
-- las comillas delimitan el texto.
-
-### Varias instrucciones
-
-```python
-print("Taller de Programación I")
-print("Lenguaje: Python")
-print("Año: 2026")
-```
-
-Python las ejecuta de arriba hacia abajo.
-
-### Texto y números
-
-```python
-print("Cantidad de materias:")
-print(5)
-```
-
-`"5"` y `5` no son lo mismo:
-
-- `"5"` es texto;
-- `5` es un número entero.
-
-Esta diferencia será importante al realizar operaciones.
-
-### Palabras reservadas y nombres incorporados
-
-Palabras como `if`, `while`, `def` y `class` tienen un significado reservado. No pueden utilizarse como nombres de variables.
-
-`print`, `input` y `type` no son palabras reservadas: son nombres de funciones incorporadas. Tampoco conviene usarlos como nombres de variables, porque dejaríamos de acceder fácilmente a esas funciones.
+1. Mientras no estén espumosos, batir los huevos junto con el azúcar.
+2. Agregar la harina en forma envolvente sin batir.
+3. Batir suavemente.
+4. Poner en una bandeja para hornear.
+5. Colocar en el horno a 180 grados.
+6. Si al clavar un cuchillo y sale húmedo, entonces ir a 5.
+7. Retirar del horno.
+8. Mientras no esté frío, esperar.
+9. Desmoldar y servir.
+10. Fin.
 
 ---
 
-## 11. Recibir información con `input()`
+### *👩‍💻 Primeras líneas de código*
 
-`input()` permite solicitar un dato mediante el teclado.
+En Python, escribir código es como seguir un conjunto de reglas claras y sencillas que ayudan a que el programa funcione correctamente. Una de estas reglas tiene que ver con **las palabras reservadas**. 
 
-```python
-input("Ingresá tu nombre: ")
-```
+Es como si estas palabras fueran herramientas exclusivas de Python, y usarlas para otro propósito podría confundir al programa. Al respetar estas palabras y usarlas correctamente, te aseguras de que tu código sea claro, funcional y fácil de entender tanto para la máquina como para otros programadores.
 
-El mensaje aparece en la consola y el programa espera una respuesta.
+¡Es un pequeño detalle que hace que programar en Python sea más organizado y eficiente!
 
-Sin embargo, si no guardamos esa respuesta, no podremos utilizarla después. Para conservarla usamos una variable.
+Las palabras reservadas son términos que Python ya tiene definidos para tareas específicas dentro del lenguaje, como `if`, `while`, `def` o `class`. Estas palabras tienen un significado especial y no se pueden usar para nombrar variables, funciones o cualquier otra cosa en tu código.
 
-```python
-nombre = input("Ingresá tu nombre: ")
-```
+Conozcamos algunas:
 
-La función `input()` siempre devuelve inicialmente una cadena de texto, es decir, un valor de tipo `str`.
+`print()`: Es una función que se utiliza para mostrar información en la consola o terminal. Puede mostrar texto, valores de variables o resultados de operaciones.
 
-### Entrada y salida combinadas
+### ***print()***
 
-```python
-nombre = input("Ingresá tu nombre: ")
-print("Hola,", nombre)
-```
+***¿Cómo funciona un print?***  
 
-Posible ejecución:
+Estoy en mi IDE (Spyder, Replit, Google Colab, el que sea), en el **script** (la parte de código), y quiero que el **usuario vea algo que le quiero decir**. Escribo la palabra `print`, inmediatamente seguida de un paréntesis (sin espacio, sin igual, sin nada). Probablemente el IDE que estemos usando **me autocomplete el paréntesis de cierre**, eso está bien. Ahora, tengo un print, y adentro un espacio entre paréntesis en donde puedo poner lo que quiero. 
 
-```text
-Ingresá tu nombre: Tomás
-Hola, Tomás
-```
+Ejemplo: `print(”Hola mundo”)`
 
-Importante: `input()` no es una palabra reservada y no lleva una `s` final.
+!image.png
 
-```python
-# Incorrecto
-inputs("Ingresá un dato: ")
-```
+Como se ve en el ejemplo anterior el renglón (o cuadro) en donde escribimos código (el script) escribimos entre paréntesis y entre comillas “Hola mundo”. Al darle “play” al código se mostrará debajo, en la consola, lo que queremos que vea el usuario. 
 
 ---
 
-## 12. Variables y asignación
+### *input()*
 
-Una **variable** es un nombre que permite referirse a un valor almacenado durante la ejecución del programa.
+No solamente podemos mostrar cosas en consola sino que también el mismo usuario puede interactuar y mostar información. Un ejemplo de esta situación es cuando nos registramos en un sitio web en donde nos piden cuenta y contraseña (inputs) y luego la app o el sitio nos dice “Bienvenid@ Lionel”. El nombre ***Lionel*** fue completado por el usuario, pero ¿Cómo podemos pedirlo en python?. Para eso se usa la palabra reservada `input()`
 
-La metáfora de una caja puede ayudar al principio, pero una variable no es literalmente un cajón físico: es un nombre asociado con un valor.
+`input()`:  Es una función que permite al usuario ingresar datos desde el teclado. Los datos ingresados se guardan como cadenas de texto (tipo `str`), a menos que se conviertan a otro tipo explícitamente.
 
-```python
-nombre = "Sofía"
-edad = 20
-```
+!image.png
 
-El signo `=` es el **operador de asignación**. Se lee “recibe” o “se asigna”.
+En el script escribimos la palabra reservada `input()` y dentro de los paréntesis le pedimos al usuario el dato que queremos. Al darle play en la consola aparecerá el mensaje y allí mismo se responde:
 
-```text
-nombre recibe "Sofía"
-edad recibe 20
-```
+!image.png
 
-No expresa necesariamente una igualdad matemática.
+PERO tenemos un problema… los datos no pueden estar sueltos en python! Deben estar almacenados en algo llamado **variables.** No nos preocupemos demasiado por eso ahora, en la clase dos lo profundizaremos más. 
 
-### Reasignación
+En pocas palabras las variables son cajones de memoria en donde se almacena información. De momento nos enfocaremos en crear un cajón simple que almacenará un input, es decir, un espacio de memoria que almacenará un nombre. 
 
-Una variable puede recibir un valor nuevo:
+!image.png
 
-```python
-barrio = "Palermo"
-barrio = "Belgrano"
-print(barrio)
-```
+La estructura para *“asignarle un valor a la variable”* (en otras palabras, guardar algo en ese cajón) primero le colocamos un titulo a ese cajón/variable, continuación por el signo igual (=) y por último el input con la solicitud entre paréntesis como se muestra en la imagen. 
 
-Resultado:
+Al correr el código veremos que no pasa nada ni en la pantalla ni en la consola. ¿Cómo puedo hacer para mostrar información en la consola? 
 
-```text
-Belgrano
-```
+USAMOS PRINT! pero… ¿Qué se imprime? El nombre. Veamos el código completo.
 
-### Nombres adecuados
+ 
 
-Usá nombres que expliquen qué contiene la variable:
+!image.png
 
-```python
-nombre_estudiante = "Valentina"
-cantidad_materias = 5
-precio_entrada = 12500.50
-```
+<aside>
+💡
 
-Reglas iniciales:
+***Práctica**: inventar diferentes tipos de inputs e imprimirlos completando con prints. Ejemplo*
 
-- pueden contener letras, números y `_`;
-- no pueden comenzar con un número;
-- no pueden contener espacios;
-- no pueden ser palabras reservadas;
-- distinguen mayúsculas de minúsculas;
-- en Python se recomienda `snake_case`.
+`*dni = input(”Por favor ingresá tu DNI sin puntos ni espacios: “)*`
 
-```python
-# Adecuados
-nombre_completo = "Juan Pérez"
-edad = 19
-materia_1 = "Programación"
+`*print(”tu numero de documento es:”, dni)*`
 
-# Incorrectos
-# 1materia = "Programación"
-# nombre completo = "Juan Pérez"
-# class = "A"
-```
+</aside>
 
 ---
 
-## 13. Tipos de datos básicos
+Existen caracteres especiales para modificar la forma en que aparece el texto:
 
-El tipo de un valor determina qué representa y qué operaciones puede realizar.
+- "**\n**" es para crear una nueva línea
+- "**\t**" es para poner una tabulación
 
-| Tipo | Significado | Ejemplos |
-|---|---|---|
-| `str` | Cadena de texto | `"Buenos Aires"`, `"123"` |
-| `int` | Número entero | `20`, `-4`, `0` |
-| `float` | Número decimal | `1.75`, `3500.50` |
-| `bool` | Valor lógico | `True`, `False` |
+### 🔹 **Uso de `\n` (Nueva línea)**
 
-### Cadenas: `str`
+El carácter `\n` se usa para **saltar a una nueva línea** en un `print()` o en una cadena de texto.
 
-```python
-carrera = "Publicidad"
-estacion = "Facultad de Derecho"
-```
+!image.png
 
-Aunque contenga dígitos, un valor entre comillas es texto:
+📌 **Ejemplo práctico:**
 
-```python
-codigo_postal = "1425"
-```
+!image.png
 
-### Enteros: `int`
+### 🔹 **Uso de `\t` (Tabulación)**
 
-```python
-edad = 20
-cantidad_entradas = 3
-```
+El carácter `\t` agrega un **espacio de tabulación** (equivalente a varios espacios).
 
-### Decimales: `float`
+!image.png
 
-En Python los decimales se escriben con punto:
+📌 **Ejemplo práctico:**
 
-```python
-altura = 1.78
-precio = 4500.50
-```
+!image.png
 
-### Booleanos: `bool`
+### 🔥 **Ejemplo combinado (`\n` y `\t`)**
 
-Solo poseen dos valores, con mayúscula inicial y sin comillas:
-
-```python
-es_estudiante = True
-tiene_descuento = False
-```
-
-`"True"` es texto; `True` es un valor booleano.
+!image.png
 
 ---
 
-## 14. Consultar el tipo con `type()`
+### 💬 **¿Qué es un comentario en Python?**
 
-`type()` informa el tipo de un valor.
+Un **comentario** en Python es un fragmento de texto dentro del código que **no se ejecuta**, sino que se utiliza para:
 
-```python
-nombre = "Luca"
-edad = 20
-altura = 1.76
-es_estudiante = True
+✅ Explicar el propósito de una línea o bloque de código.
 
-print(type(nombre))
-print(type(edad))
-print(type(altura))
-print(type(es_estudiante))
-```
+✅ Hacer anotaciones para otros programadores o para uno mismo.
 
-Resultado:
+✅ Deshabilitar temporalmente líneas de código sin eliminarlas.
 
-```text
-<class 'str'>
-<class 'int'>
-<class 'float'>
-<class 'bool'>
-```
+Los comentarios ayudan a mejorar la **legibilidad y mantenimiento del código**.
 
-Por ahora podemos interpretar `class` como la categoría a la que pertenece el valor.
+### **Tipos de comentarios en Python**
 
-### Atención con `input()`
+### **1. Comentarios de una sola línea (`#`)**
 
-```python
-edad = input("Ingresá tu edad: ")
-print(type(edad))
-```
+Se utilizan para escribir una nota en una línea específica. Se indican con el símbolo `#`.
 
-Aunque la persona escriba `20`, el resultado será:
+`print("Hola, Python")  # También se puede comentar al final de una línea de código`
 
-```text
-<class 'str'>
-```
+### **2. Comentarios de múltiples líneas (''' o """)**
 
-`input()` entrega texto. En temas posteriores aprenderemos a convertirlo para hacer cálculos.
+En Python, no hay un símbolo especial para comentarios multilínea, pero podemos utilizar **comillas triples (`'''` o `"""`)** para escribir varias líneas seguidas.
 
----
-
-## 15. Mensajes claros con f-strings
-
-Una **f-string** permite insertar valores dentro de un texto.
-
-```python
-nombre = "Malena"
-barrio = "Caballito"
-
-print(f"{nombre} vive en {barrio}.")
-```
-
-Resultado:
-
-```text
-Malena vive en Caballito.
-```
-
-La estructura es:
-
-```python
-f"Texto {variable}"
-```
-
-- la `f` se escribe antes de la comilla;
-- las variables se colocan entre llaves;
-- el texto permanece entre comillas.
-
-### Con datos ingresados
-
-```python
-nombre = input("Nombre: ")
-carrera = input("Carrera: ")
-
-print(f"{nombre} estudia {carrera}.")
-```
-
-También se puede mostrar más de una variable:
-
-```python
-actividad = "ir al cine"
-dia = "sábado"
-
-print(f"El {dia} quiero {actividad}.")
-```
-
----
-
-## 16. Saltos de línea y tabulaciones
-
-Dentro de una cadena podemos utilizar secuencias especiales.
-
-### `\n`: nueva línea
-
-```python
-print("Nombre: Martina\nCarrera: Publicidad")
-```
-
-Resultado:
-
-```text
-Nombre: Martina
-Carrera: Publicidad
-```
-
-### `\t`: tabulación
-
-```python
-print("Producto\tPrecio")
-print("Café\t4500")
-```
-
-Resultado aproximado:
-
-```text
-Producto    Precio
-Café        4500
-```
-
-La alineación exacta depende de la longitud del texto y de la consola.
-
-### Uso combinado
-
-```python
-print("Plan del día\n\t09:00 Clase\n\t13:00 Almuerzo\n\t18:00 Cine")
-```
-
----
-
-## 17. Comentarios
-
-Un comentario contiene una aclaración destinada a las personas que leen el código. Python no lo ejecuta.
-
-Los comentarios comienzan con `#`:
-
-```python
-# Solicita un dato para personalizar el saludo
-nombre = input("Nombre: ")
-print(f"Hola, {nombre}")
-```
-
-También pueden escribirse después de una instrucción:
-
-```python
-print("Inicio")  # Mensaje inicial
-```
-
-Un comentario útil explica el propósito o una decisión. No hace falta describir lo evidente.
-
-```python
-# Poco útil: imprime Hola
-print("Hola")
-```
-
-### ¿Existen comentarios multilínea?
-
-Python no posee una sintaxis especial de comentario multilínea. Las comillas triples crean una cadena de varias líneas:
-
-```python
+`"""
+Este es un comentario de varias líneas.
+Se usa para explicar fragmentos largos de código.
+No se ejecuta al correr el programa.
 """
-Esto es una cadena de texto.
-No es un comentario especial de Python.
-"""
-```
-
-En ciertos lugares se usan como documentación. Para comentarios normales utilizaremos `#` en cada línea.
+print("Python es genial")`
 
 ---
 
-## 18. Un primer programa integrado
+### 🖨  ¿Qué es `print(f"")` en Python?
 
-Este programa combina entrada, variables, salida, f-strings y formato:
+La sintaxis `print(f"")` se conoce como **"f-strings"** o **"formatted string literals"** y se utiliza para **formatear cadenas de manera sencilla y legible** en Python. Permite insertar valores de variables dentro de una cadena sin necesidad de concatenaciones complicadas.
 
-```python
-# Presentación de un estudiante
-nombre = input("Ingresá tu nombre: ")
-edad = input("Ingresá tu edad: ")
-barrio = input("Ingresá tu barrio: ")
-actividad = input("Ingresá una actividad que te guste: ")
+`print(f"Texto {variable}")`
 
-print("\n--- PERFIL ---")
-print(f"Nombre:\t{nombre}")
-print(f"Edad:\t{edad}")
-print(f"Barrio:\t{barrio}")
-print(f"Actividad:\t{actividad}")
-```
+- Se coloca **una `f` antes de las comillas** (`f""` o `f''`).
+- Dentro de las llaves `{}` se pueden incluir **variables, expresiones y funciones**
 
-### Análisis
+### 1. Insertar variables en un texto
 
-**Entradas:**
+!image.png
 
-- nombre;
-- edad;
-- barrio;
-- actividad.
+📌 **Sin `f""`, habría que hacer:**
 
-**Procesamiento:**
-
-- almacenamiento de las respuestas;
-- inserción de los valores en mensajes;
-- organización del formato.
-
-**Salida:**
-
-- perfil presentado en la consola.
-
-La edad sigue siendo texto porque todavía no hacemos operaciones con ella.
+!image.png
 
 ---
 
-## 19. Errores frecuentes
+### ***type()***
 
-### Comillas tipográficas
+`type()`: Es una función que se utiliza para conocer el tipo de dato de una variable o valor. Devuelve el tipo (como `int`, `float`, `str` o `bool`).
+Veamos qué significan estas siglas.
 
-Incorrecto:
+### *🏷Tipos de datos*
 
-```python
-print(“Hola”)
-```
+Los **datos** son cualquier información que se utiliza en un programa, como números, texto o valores lógicos. Python organiza esta información en **tipos de datos**, que definen cómo se puede usar cada uno de ellos. Los principales tipos de datos en Python son:
 
-Correcto:
+- **int**: números enteros (e.g., 10, -5).
+- **float**: números decimales (e.g., 3.14, -0.5).
+- **str**: texto o cadenas de caracteres (e.g., "Hola", "123").
+- **bool**: valores lógicos (e.g., `True`, `False`).
 
-```python
-print("Hola")
-```
+Estos tipos permiten que Python entienda qué operaciones son posibles con cada uno y para ayudarnos hacemos uso de type() de la siguiente forma. 
 
-Las comillas copiadas de ciertos procesadores de texto pueden no ser válidas.
+!image.png
 
-### Mayúsculas incorrectas
+1- En la imagen anterior vemos que asignamos el valor “Luca Prodan” a la variable nombre.
 
-```python
-Print("Hola")
-```
+2- Dentro de los paréntesis de `type()`  ponemos la variable
 
-Python distingue mayúsculas y minúsculas. La función se llama `print`.
+3- Por ultimo dentro del paréntesis de `print()` colocamos la estructura que de armo en el paso 2 `type(nombre)`
 
-### Comillas o paréntesis sin cerrar
+En otras palabras a python le estamos pidiendo lo siguiente: “*imprimí en consola el tipo de dato guardado en la variable **nombre”.*** 
 
-```python
-print("Hola)
-print("Hola"
-```
+La consola devolverá <class 'str'> que significa que el tipo de dato guardado es un string, es decir, una cadena de caracteres. 
 
-### Variable inexistente
+<aside>
+💡
 
-```python
-nombre = "Delfina"
-print(nomrbe)
-```
+***Práctica**: en Google Colab guardar distintos tipos de datos en diferentes variables y mostrar en consola el tipo de datos que almacena haciendo uso de type.*
 
-`nombre` y `nomrbe` son nombres distintos.
+*Ejemplo:*
 
-### Variable entre comillas
+`*nombre = "Alicia"  
+edad = 25*`          
 
-```python
-nombre = "Delfina"
-print("nombre")
-```
+`*altura = 1.68      
+es_estudiante = True*`  
 
-Muestra la palabra `nombre`, no el contenido de la variable.
+`*print(type(nombre))  
+print(type(edad))    
+print(type(altura))  
+print(type(es_estudiante))*`  
 
-Correcto:
-
-```python
-print(nombre)
-```
-
-### Confundir `=` con una pregunta
-
-```python
-edad = 20
-```
-
-Esta instrucción asigna el valor `20`. No pregunta si `edad` es igual a `20`.
-
-### Esperar un número de `input()`
-
-```python
-edad = input("Edad: ")
-print(type(edad))
-```
-
-El tipo será `str`. Esto no es un error de Python: es el funcionamiento normal de `input()`.
+</aside>
 
 ---
 
-## 20. Documentación y fuentes de consulta
+En la actividad anterior pudimos revisar el tipo de datos almacenados en las variables usando la palabra reservada type(). La información guardada en las variables las hemos elegido nosotros, pero… ¿podemos pedirle al usuario de nuestro programa que ingrese cierto tipo da datos?.
 
-La documentación oficial permite verificar cómo funciona Python:
+Siempre que debamos pedirle información al usuario utilizaremos input().
 
-[Documentación oficial de Python en español](https://docs.python.org/es/3/)
+<aside>
+💡
 
-Incluye:
+***Práctica:** En Google Colab utilizar inputs() para pedirle al usuario que ingrese un tipo de dato en específico. Un ejemplo de petición puede ser “Bienvenido al programa, por favor ingrese un tipo de dato int”.*
 
-- tutoriales;
-- referencias del lenguaje;
-- funciones incorporadas;
-- módulos de la biblioteca estándar;
-- guías de instalación;
-- índices y buscador.
+`dato_ingresado = input(”Ingrese valor”)`
 
-No es necesario memorizarla. Hay que aprender a:
-
-1. formular una pregunta concreta;
-2. buscar el concepto o la función;
-3. identificar la versión;
-4. leer el ejemplo;
-5. probarlo en un archivo pequeño;
-6. adaptarlo sin copiar partes que no comprendemos.
-
-También pueden utilizarse libros, materiales docentes y comunidades técnicas. Una respuesta encontrada en un foro o buscador debe comprobarse mediante ejecución y, cuando sea necesario, mediante documentación.
+</aside>
 
 ---
 
-## 21. Inteligencia artificial: usos y límites
+¿Cómo nos podemos asegurar de que los datos ingresados corresponden al dato solicitado?. Usando type() podemos corroborarlo. Pensemos… si el dato que ingresó el usuario es incorrecto, ¿podemos pedirle que vuelva a ingresarlo?. ¿Cómo se puede dar cuenta el programa de que la información está mal?. 
 
-Una herramienta de inteligencia artificial puede:
-
-- explicar un concepto con otras palabras;
-- proponer ejemplos;
-- formular preguntas de práctica;
-- ayudar a leer un mensaje de error;
-- revisar una solución que ya intentamos;
-- comparar dos formas de resolver un problema.
-
-También puede:
-
-- inventar funciones;
-- producir código incorrecto;
-- usar contenidos todavía no estudiados;
-- complicar innecesariamente una solución;
-- responder con seguridad aunque esté equivocada;
-- resolver la tarea sin que el estudiante aprenda.
-
-### Protocolo de uso responsable
-
-1. Leé y explicá el problema.
-2. Escribí una primera solución propia.
-3. Pedí una ayuda concreta, no la resolución completa.
-4. Ejecutá el código.
-5. Probalo con varios datos.
-6. Consultá la documentación cuando haya dudas.
-7. Explicá cada línea con tus palabras.
-8. Indicá el uso de IA si la consigna lo exige.
-
-Copiar un programa que no podemos explicar no demuestra aprendizaje.
+Más adelante durante la cursada le daremos más independencia al programa para que pueda tomar sus propias decisiones y muestre en consola las instrucciones correctas. 
 
 ---
 
-# Actividades
+### ***🖥 Iniciado con Thonny***
 
-Las actividades avanzan desde la comprensión hasta la producción. Realizalas en orden.
+Después de haber trabajado con Google Colab, ahora exploraremos **Thonny**, un entorno de desarrollo integrado (IDE) diseñado para principiantes en Python. Es un programa ligero y fácil de usar que nos permite escribir, ejecutar y depurar código en Python. Fue desarrollado pensando en quienes están aprendiendo a programar, por lo que su interfaz es sencilla y sin distracciones.
 
-## Actividad 1. Programas en la vida cotidiana
+- **Instalación sencilla**: No requiere configuraciones avanzadas.
+- **Entorno amigable**: Ideal para quienes están dando sus primeros pasos en Python.
+- **Depurador integrado**: Permite seguir paso a paso la ejecución del código.
+- **Consola interactiva**: Similar a la de Google Colab, pero funcionando de manera local
 
-Elegí dos aplicaciones que uses y completá:
+### *Primeros pasos en Thonny*
 
-| Aplicación | Problema que resuelve | Entrada | Procesamiento | Salida |
-|---|---|---|---|---|
-| 1 | | | | |
-| 2 | | | | |
+1. **Abrir Thonny**: Si aún no lo tienes instalado, puedes descargarlo desde thonny.org.
+2. **Escribir tu primer código**: Abre un nuevo archivo y escribe:
 
-## Actividad 2. Hardware y software
+`print("¡Hola, Thonny!")`
 
-Clasificá cada elemento:
+1. **Ejecutar el código**: Haz clic en el botón **"Ejecutar"** (o presiona `F5`).
+2. **Observar la salida**: En la consola de Thonny verás el resultado.
 
-- Python;
-- teclado;
-- memoria RAM;
-- Thonny;
-- SSD;
-- Windows o Linux;
-- procesador;
-- archivo `saludo.py`;
-- pantalla.
+### *Transición desde Google Colab*
 
-Después explicá qué elementos intervienen desde que presionás `F5` hasta que aparece un saludo en la consola.
+En Colab trabajamos en la nube, mientras que en Thonny el código se ejecuta localmente en tu computadora. Esto significa que ahora podrás **guardar y organizar tus archivos de Python directamente en tu equipo**.
 
-## Actividad 3. Ordenar el desarrollo
-
-Ordená las etapas:
-
-- depurar;
-- codificar;
-- definir el problema;
-- probar;
-- analizar entradas y salidas;
-- diseñar el algoritmo;
-- mantener y mejorar.
-
-Explicá por qué probar antes de codificar no tendría sentido en este caso.
-
-## Actividad 4. Evaluar algoritmos
-
-Leé este algoritmo:
-
-1. Viajar a la escuela.
-2. Entrar al aula.
-3. Salir de casa.
-4. Preparar los materiales.
-
-Respondé:
-
-1. ¿Es ordenado?
-2. ¿Es preciso?
-3. ¿Qué pasos faltan?
-4. Reescribilo con al menos ocho pasos.
-
-## Actividad 5. Diseñar un algoritmo
-
-Elegí una situación:
-
-- organizar una salida con amistades;
-- buscar una película en una biblioteca local;
-- calcular cuántos viajes permite un saldo;
-- registrar la asistencia de un curso;
-- reservar una cancha.
-
-Escribí:
-
-1. definición del problema;
-2. entradas;
-3. procesamiento;
-4. salida;
-5. algoritmo de al menos siete pasos;
-6. dos situaciones que deberías probar.
-
-## Actividad 6. Primer archivo en Thonny
-
-Creá `actividad_06_presentacion.py` y mostrá cada dato en una línea:
-
-- nombre;
-- edad;
-- curso;
-- localidad o barrio;
-- una actividad favorita;
-- el mensaje `Estoy aprendiendo Python`.
-
-En esta actividad usá solamente `print()`.
-
-## Actividad 7. Detectar y corregir
-
-Cada fragmento contiene al menos un error. Corregilo y explicá el problema.
-
-```python
-Print("Hola")
-```
-
-```python
-print(“Buenos Aires”)
-```
-
-```python
-print("Taller de Programación"
-```
-
-```python
-print("Python)
-```
-
-```python
-nombre = "Lucía"
-print(nomrbe)
-```
-
-## Actividad 8. Entrada y variables
-
-Creá `actividad_08_datos.py`. El programa debe pedir:
-
-- nombre;
-- edad;
-- curso;
-- actividad favorita.
-
-Después debe mostrar todos los datos. Primero usá:
-
-```python
-print("Hola,", nombre)
-```
-
-No uses todavía f-strings.
-
-## Actividad 9. Tipos de datos
-
-Indicá el tipo de cada valor sin ejecutarlo:
-
-```python
-"2026"
-2026
-20.26
-True
-"False"
--15
-0.0
-"Buenos Aires"
-```
-
-Después verificá tus respuestas con `type()`.
-
-## Actividad 10. Investigar `input()`
-
-Ejecutá:
-
-```python
-edad = input("Ingresá tu edad: ")
-print(edad)
-print(type(edad))
-```
-
-Respondé:
-
-1. ¿Qué escribiste?
-2. ¿Qué valor mostró?
-3. ¿Qué tipo informó?
-4. ¿Por qué el tipo no fue `int`?
-
-## Actividad 11. Presentación con f-strings
-
-Creá un programa que solicite nombre, barrio y actividad preferida. Debe generar una oración natural como:
-
-```text
-Martín vive en Villa Urquiza y los fines de semana suele jugar al fútbol.
-```
-
-La oración debe construirse con una f-string.
-
-## Actividad 12. Formato de consola
-
-Usá una sola instrucción `print()` con `\n` y `\t` para producir:
-
-```text
-AGENDA
-09:00   Clase
-13:00   Almuerzo
-18:00   Cine
-```
-
-## Actividad 13. Comentarios útiles
-
-Agregá comentarios al siguiente programa. Deben explicar su propósito general y una decisión importante, no repetir cada instrucción.
-
-```python
-nombre = input("Nombre: ")
-actividad = input("Actividad favorita: ")
-print(f"{nombre} eligió {actividad}.")
-```
-
-## Actividad 14. Testing y debugging
-
-Observá:
-
-```python
-nombre = input("Nombre: ")
-print(f"Bienvenido, {nombre}")
-```
-
-Diseñá cuatro pruebas:
-
-- un nombre habitual;
-- un nombre compuesto;
-- una respuesta vacía;
-- una respuesta con números.
-
-Completá:
-
-| Prueba | Dato ingresado | Resultado esperado | Resultado obtenido |
-|---|---|---|---|
-| 1 | | | |
-| 2 | | | |
-| 3 | | | |
-| 4 | | | |
-
-¿El programa debería aceptar todas esas respuestas? Proponé una mejora en lenguaje cotidiano, aunque todavía no sepas programarla.
-
-## Actividad 15. Desafío integrador
-
-Creá `tema00_perfil_cultural.py`.
-
-El programa debe:
-
-1. mostrar un título;
-2. pedir nombre, edad, barrio o localidad;
-3. pedir una película, serie, videojuego, deporte o actividad preferida;
-4. guardar cada respuesta en una variable;
-5. mostrar un perfil ordenado mediante f-strings;
-6. incluir `\n` o `\t`;
-7. incluir al menos un comentario útil;
-8. mostrar con `type()` el tipo de la edad recibida;
-9. ejecutarse sin errores de sintaxis;
-10. probarse con dos perfiles diferentes.
-
-### Criterios de logro
-
-| Criterio | Logrado | En proceso | A revisar |
-|---|---|---|---|
-| El archivo tiene un nombre claro y termina en `.py` | | | |
-| Las variables poseen nombres comprensibles | | | |
-| Todas las entradas quedan almacenadas | | | |
-| La salida se entiende y está ordenada | | | |
-| Las f-strings están bien construidas | | | |
-| El comentario aporta información útil | | | |
-| El programa fue probado dos veces | | | |
-| Puedo explicar cada instrucción | | | |
-
----
-
-# Autoevaluación
-
-Respondé sin volver a leer el tema. Después verificá las soluciones y revisá los apartados que necesites.
-
-## Parte A. Opción múltiple
-
-### 1. ¿Qué significa programar?
-
-- A. Instalar aplicaciones.
-- B. Diseñar y expresar instrucciones para resolver problemas.
-- C. Usar una computadora rápidamente.
-- D. Copiar código que funciona.
-
-### 2. ¿Cuál es un ejemplo de entrada?
-
-- A. El promedio calculado.
-- B. El nombre escrito por el usuario.
-- C. La división realizada.
-- D. El mensaje final.
-
-### 3. ¿Qué componente ejecuta instrucciones y realiza operaciones?
-
-- A. El SSD.
-- B. La pantalla.
-- C. La CPU.
-- D. El teclado.
-
-### 4. ¿Qué característica no corresponde a un algoritmo correcto?
-
-- A. Es finito.
-- B. Es preciso.
-- C. Es ordenado.
-- D. Es ambiguo.
-
-### 5. ¿Qué es *debugging*?
-
-- A. Diseñar la interfaz.
-- B. Localizar y corregir la causa de errores.
-- C. Escribir cualquier algoritmo.
-- D. Instalar Python.
-
-### 6. ¿Cuál es una instrucción válida?
-
-- A. `Print("Hola")`
-- B. `print(“Hola”)`
-- C. `print("Hola")`
-- D. `print "Hola"`
-
-### 7. ¿Qué devuelve inicialmente `input()`?
-
-- A. Siempre un `int`.
-- B. Siempre un `float`.
-- C. Una cadena `str`.
-- D. Un valor `bool`.
-
-### 8. ¿Cuál es una asignación válida?
-
-- A. `20 = edad`
-- B. `edad = 20`
-- C. `edad == 20`
-- D. `"edad" = 20`
-
-### 9. ¿Qué tipo posee `False`?
-
-- A. `str`
-- B. `int`
-- C. `float`
-- D. `bool`
-
-### 10. ¿Cuál es una f-string válida?
-
-- A. `"Hola, {nombre}"`
-- B. `f"Hola, {nombre}"`
-- C. `f(Hola, nombre)`
-- D. `"Hola," f nombre`
-
-## Parte B. Verdadero o falso
-
-### 11. Un archivo de Python suele usar la extensión `.py`.
-
-### 12. `"25"` y `25` tienen el mismo tipo.
-
-### 13. El signo `=` permite asignar un valor.
-
-### 14. Las comillas triples son la sintaxis oficial para comentarios multilínea.
-
-### 15. Si un programa se ejecuta sin detenerse, necesariamente produce el resultado correcto.
-
-### 16. Thonny permite trabajar localmente.
-
-### 17. Una respuesta de IA debe probarse y comprenderse antes de utilizarla.
-
-## Parte C. Producción breve
-
-### 18. Explicá con tus palabras la diferencia entre *testing* y *debugging*.
-
-### 19. Identificá entrada, procesamiento y salida:
-
-> Un programa recibe el precio de una entrada y la cantidad comprada, calcula el total y lo muestra.
-
-### 20. Escribí tres instrucciones que:
-
-1. pidan un nombre;
-2. lo guarden;
-3. muestren un saludo mediante una f-string.
-
-<details>
-<summary>Ver respuestas y orientaciones</summary>
-
-### Parte A
-
-1. B  
-2. B  
-3. C  
-4. D  
-5. B  
-6. C  
-7. C  
-8. B  
-9. D  
-10. B
-
-### Parte B
-
-11. Verdadero.  
-12. Falso: `"25"` es `str` y `25` es `int`.  
-13. Verdadero.  
-14. Falso: crean cadenas multilínea; los comentarios normales usan `#`.  
-15. Falso: puede contener un error lógico.  
-16. Verdadero.  
-17. Verdadero.
-
-### Parte C
-
-18. *Testing* consiste en realizar pruebas para descubrir errores; *debugging* consiste en localizar sus causas y corregirlas.
-
-19. Entrada: precio y cantidad. Procesamiento: multiplicación. Salida: total.
-
-20. Una respuesta posible:
-
-```python
-nombre = input("Ingresá tu nombre: ")
-saludo = f"Hola, {nombre}"
-print(saludo)
-```
-
-</details>
-
-## Escala orientativa
-
-Contá las respuestas correctas de las partes A y B:
-
-- **15 a 17:** dominio sólido; podés realizar el desafío integrador.
-- **12 a 14:** buen avance; revisá los errores antes de continuar.
-- **8 a 11:** necesitás practicar entrada, variables y tipos.
-- **0 a 7:** releé el tema por secciones y repetí las actividades 6 a 12.
-
-La puntuación no reemplaza la revisión del programa integrador. Comprender y explicar el código es tan importante como responder correctamente.
-
----
-
-## Síntesis
-
-En este tema aprendimos que:
-
-- programar implica comprender problemas y diseñar soluciones;
-- un programa puede recibir entradas, procesarlas y producir salidas;
-- hardware y software trabajan juntos para ejecutar el código;
-- un algoritmo debe ser ordenado, preciso, no ambiguo y finito;
-- probar y depurar son partes normales del desarrollo;
-- Python es un lenguaje libre, multiplataforma y de propósito general;
-- Thonny permite escribir y ejecutar programas localmente;
-- `print()` muestra información;
-- `input()` recibe texto;
-- una variable es un nombre asociado con un valor;
-- `str`, `int`, `float` y `bool` son tipos básicos;
-- `type()` permite consultar un tipo;
-- las f-strings insertan valores en textos;
-- `\n`, `\t` y `#` ayudan a presentar y documentar el código;
-- la documentación y la IA son herramientas de apoyo que deben usarse con criterio.
-
-## Lista de control final
-
-Antes de continuar, comprobá:
-
-- [ ] Puedo explicar qué es un programa.
-- [ ] Puedo reconocer entrada, procesamiento y salida.
-- [ ] Puedo escribir un algoritmo claro.
-- [ ] Puedo guardar y ejecutar un archivo `.py`.
-- [ ] Puedo usar `print()` e `input()`.
-- [ ] Puedo crear variables con nombres adecuados.
-- [ ] Puedo reconocer cuatro tipos básicos.
-- [ ] Puedo usar `type()` y una f-string.
-- [ ] Puedo interpretar errores sencillos.
-- [ ] Puedo explicar el código que escribí.
-
-[Volver al inicio](../index.md)
+En la próxima actividad, tomaremos los ejercicios que hicimos en Google Colab y los ejecutaremos en Thonny para familiarizarnos con este nuevo entorno. 🚀
