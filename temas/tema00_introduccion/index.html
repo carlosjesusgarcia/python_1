@@ -1,0 +1,723 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../img/favicon.ico">
+        <title>Tema 0: Introducción a la programación - Taller de Programación I</title>
+        <link href="../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../css/brands.min.css" rel="stylesheet">
+        <link href="../../css/solid.min.css" rel="stylesheet">
+        <link href="../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+   
+
+  <link rel="manifest" href="../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../assets/icons/apple-touch-icon.png">
+
+  <meta name="theme-color" content="#2196f3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Taller de Programación I">
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../..">Taller de Programación I</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../programa/" class="nav-link">Programa de la materia</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Temas</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Tema 0: Introducción a la programación</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Clases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../clases/clase01/" class="dropdown-item">Clase 1: Presentación de la materia</a>
+</li>
+                                    
+<li>
+    <a href="../../clases/clase02/" class="dropdown-item">Clase 2: Programas, lenguajes y algoritmos</a>
+</li>
+                                    
+<li>
+    <a href="../../clases/clase03/01_variables_y_nomenclatura/" class="dropdown-item">Clase 3: Tipos, variables, expresiones y asignaciones</a>
+</li>
+                                    
+<li>
+    <a href="../../clases/clase04/02_cadenas_e_inmutabilidad/" class="dropdown-item">Clase 4: Cadenas de texto e inmutabilidad</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../programa/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" href="../../clases/clase01/" class="nav-link">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#tema-0-introduccion-a-la-programacion" class="nav-link">Tema 0: Introducción a la programación</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#objetivos" class="nav-link">Objetivos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-que-es-programar" class="nav-link">1. ¿Qué es programar?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-componentes-basicos-de-un-programa" class="nav-link">2. Componentes básicos de un programa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-del-problema-al-programa" class="nav-link">3. Del problema al programa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-algoritmos" class="nav-link">4. Algoritmos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-testing-debugging-y-bugs" class="nav-link">5. Testing, debugging y bugs</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-que-es-python" class="nav-link">6. ¿Qué es Python?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-codigo-fuente-interprete-y-resultado" class="nav-link">7. Código fuente, intérprete y resultado</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-herramientas-para-escribir-python" class="nav-link">8. Herramientas para escribir Python</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-primer-programa" class="nav-link">9. Primer programa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-errores-frecuentes-en-el-primer-programa" class="nav-link">10. Errores frecuentes en el primer programa</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#11-comentarios" class="nav-link">11. Comentarios</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#12-caracteres-especiales-en-textos" class="nav-link">12. Caracteres especiales en textos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#13-documentacion-y-fuentes-de-consulta" class="nav-link">13. Documentación y fuentes de consulta</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#14-inteligencia-artificial-y-aprendizaje" class="nav-link">14. Inteligencia artificial y aprendizaje</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-1-entrada-procesamiento-y-salida" class="nav-link">Actividad 1: Entrada, procesamiento y salida</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-2-ordenar-el-desarrollo" class="nav-link">Actividad 2: Ordenar el desarrollo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-3-mejorar-un-algoritmo" class="nav-link">Actividad 3: Mejorar un algoritmo</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-4-disenar-una-solucion" class="nav-link">Actividad 4: Diseñar una solución</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-5-primeras-instrucciones" class="nav-link">Actividad 5: Primeras instrucciones</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-6-corregir-codigo" class="nav-link">Actividad 6: Corregir código</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-7-formato-de-salida" class="nav-link">Actividad 7: Formato de salida</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-8-probar-y-depurar" class="nav-link">Actividad 8: Probar y depurar</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#autoevaluacion" class="nav-link">Autoevaluación</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sintesis" class="nav-link">Síntesis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="tema-0-introduccion-a-la-programacion">Tema 0: Introducción a la programación</h1>
+<p>En este tema vas a conocer qué significa programar, cómo se transforma un problema en un programa y qué herramientas usaremos durante la cursada. También vas a ejecutar tus primeras instrucciones en Python.</p>
+<h2 id="objetivos">Objetivos</h2>
+<p>Al terminar este tema vas a poder:</p>
+<ul>
+<li>explicar con tus palabras qué es programar;</li>
+<li>reconocer los componentes básicos de un programa;</li>
+<li>distinguir entre código fuente, intérprete y resultado;</li>
+<li>identificar las etapas principales del desarrollo de un programa;</li>
+<li>comprender qué es un algoritmo;</li>
+<li>escribir y ejecutar un primer programa en Python;</li>
+<li>usar <code>print()</code> para mostrar información;</li>
+<li>reconocer el valor y los límites de la inteligencia artificial al aprender programación.</li>
+</ul>
+<h2 id="1-que-es-programar">1. ¿Qué es programar?</h2>
+<p>Programar consiste en diseñar y escribir instrucciones para que una computadora realice una tarea o resuelva un problema.</p>
+<p>La computadora no interpreta intenciones ni completa por sí sola los pasos que faltan. Necesita instrucciones expresadas de forma clara, ordenada y mediante un lenguaje que pueda procesar.</p>
+<p>Por ejemplo, podemos crear programas para:</p>
+<ul>
+<li>calcular el promedio de varias notas;</li>
+<li>registrar gastos del mes;</li>
+<li>buscar una película en una colección;</li>
+<li>organizar las reservas de una cancha;</li>
+<li>procesar respuestas de una encuesta;</li>
+<li>controlar el stock de un comercio;</li>
+<li>analizar información de redes sociales.</li>
+</ul>
+<p>Programar no consiste solamente en escribir código. Antes de hacerlo hay que comprender el problema y diseñar una solución.</p>
+<h2 id="2-componentes-basicos-de-un-programa">2. Componentes básicos de un programa</h2>
+<p>En un programa sencillo podemos reconocer tres componentes:</p>
+<ol>
+<li><strong>Entrada:</strong> datos que recibe el programa.</li>
+<li><strong>Procesamiento:</strong> operaciones que realiza con esos datos.</li>
+<li><strong>Salida:</strong> resultado que produce o muestra.</li>
+</ol>
+<h3 id="ejemplo">Ejemplo</h3>
+<p>Una aplicación calcula cuánto debe pagar cada persona después de una cena.</p>
+<ul>
+<li><strong>Entrada:</strong> importe total y cantidad de personas.</li>
+<li><strong>Procesamiento:</strong> división del importe total por la cantidad de personas.</li>
+<li><strong>Salida:</strong> importe que debe pagar cada persona.</li>
+</ul>
+<pre><code class="language-text">Entrada → Procesamiento → Salida
+</code></pre>
+<p>No todos los programas necesitan que una persona introduzca datos en el momento. La entrada también puede proceder de un archivo, un sensor, una base de datos u otro programa.</p>
+<h2 id="3-del-problema-al-programa">3. Del problema al programa</h2>
+<p>El desarrollo de un programa suele incluir las siguientes etapas:</p>
+<ol>
+<li><strong>Definir el problema:</strong> determinar qué necesidad se quiere resolver.</li>
+<li><strong>Analizar el problema:</strong> identificar los datos disponibles, las operaciones necesarias y el resultado esperado.</li>
+<li><strong>Diseñar una estrategia:</strong> ordenar los pasos de la solución.</li>
+<li><strong>Escribir el algoritmo:</strong> expresar la solución mediante instrucciones precisas y finitas.</li>
+<li><strong>Codificar:</strong> traducir el algoritmo a un lenguaje de programación.</li>
+<li><strong>Probar:</strong> ejecutar el programa con diferentes datos para encontrar errores.</li>
+<li><strong>Depurar:</strong> localizar la causa de los errores y corregirlos.</li>
+<li><strong>Mantener y mejorar:</strong> modificar el programa cuando aparecen nuevas necesidades.</li>
+</ol>
+<h3 id="ejemplo-consultar-ingredientes-de-un-producto">Ejemplo: consultar ingredientes de un producto</h3>
+<p><strong>Problema:</strong> una persona quiere conocer los ingredientes de un producto antes de comprarlo.</p>
+<p><strong>Entrada:</strong> nombre o código del producto.</p>
+<p><strong>Procesamiento:</strong> búsqueda del producto en una colección de datos.</p>
+<p><strong>Salida:</strong> lista de ingredientes o aviso de que el producto no fue encontrado.</p>
+<p><strong>Posible algoritmo:</strong></p>
+<ol>
+<li>Solicitar el nombre o código del producto.</li>
+<li>Buscar el producto.</li>
+<li>Si existe, obtener sus ingredientes.</li>
+<li>Mostrar los ingredientes.</li>
+<li>Si no existe, informar que no fue encontrado.</li>
+<li>Finalizar.</li>
+</ol>
+<h2 id="4-algoritmos">4. Algoritmos</h2>
+<p>Un <strong>algoritmo</strong> es una secuencia ordenada, precisa y finita de pasos que permite resolver un problema o realizar una tarea.</p>
+<p>Un algoritmo debe ser:</p>
+<ul>
+<li><strong>ordenado:</strong> sus pasos siguen una secuencia lógica;</li>
+<li><strong>preciso:</strong> cada instrucción indica claramente qué debe hacerse;</li>
+<li><strong>finito:</strong> termina después de una cantidad limitada de pasos;</li>
+<li><strong>eficaz:</strong> conduce al resultado esperado.</li>
+</ul>
+<p>Los algoritmos existen también fuera de la programación. Una receta, las indicaciones para llegar a un lugar o el procedimiento para retirar dinero de un cajero son ejemplos cotidianos.</p>
+<h3 id="ejemplo-cotidiano">Ejemplo cotidiano</h3>
+<p>Algoritmo para viajar en subte:</p>
+<ol>
+<li>Consultar qué línea permite llegar al destino.</li>
+<li>Dirigirse a la estación de origen.</li>
+<li>Ingresar con la tarjeta SUBE.</li>
+<li>Verificar la dirección del recorrido.</li>
+<li>Subir al tren correspondiente.</li>
+<li>Bajar en la estación de destino.</li>
+<li>Salir de la estación.</li>
+<li>Finalizar.</li>
+</ol>
+<p>Si falta el cuarto paso, una persona podría subir a la línea correcta, pero viajar en la dirección equivocada. El orden y la precisión importan.</p>
+<h2 id="5-testing-debugging-y-bugs">5. Testing, debugging y bugs</h2>
+<p>Durante el desarrollo es normal que un programa no funcione correctamente en el primer intento.</p>
+<ul>
+<li><strong>Testing o prueba:</strong> ejecución planificada del programa para comprobar su comportamiento y encontrar errores.</li>
+<li><strong>Debugging o depuración:</strong> proceso de localizar la causa de un error y corregirla.</li>
+<li><strong>Bug:</strong> defecto del programa que provoca un resultado incorrecto o inesperado.</li>
+</ul>
+<p>Probar no significa ejecutar el programa una sola vez. Hay que usar datos normales, casos extremos y entradas inesperadas.</p>
+<h3 id="ejemplo_1">Ejemplo</h3>
+<p>Si un programa divide el total de una cuenta entre la cantidad de personas, no alcanza con probar <code>48000</code> y <code>4</code>. También conviene comprobar qué sucede si la cantidad de personas es <code>1</code>, si se introduce <code>0</code> o si se escribe texto donde se esperaba un número.</p>
+<h2 id="6-que-es-python">6. ¿Qué es Python?</h2>
+<p>Python es un lenguaje de programación de propósito general. Se utiliza en educación, automatización, desarrollo web, ciencia de datos, inteligencia artificial, análisis de información y muchas otras áreas.</p>
+<p>Durante la cursada lo usaremos porque:</p>
+<ul>
+<li>su sintaxis es relativamente clara;</li>
+<li>permite concentrarse en la lógica del problema;</li>
+<li>es libre y gratuito;</li>
+<li>funciona en Windows, Linux y macOS;</li>
+<li>posee documentación extensa;</li>
+<li>cuenta con una comunidad muy amplia;</li>
+<li>puede instalarse y utilizarse sin conexión permanente a Internet.</li>
+</ul>
+<p>Python admite diferentes formas de organizar programas. En esta materia comenzaremos con programación imperativa: una secuencia de instrucciones que se ejecutan en un orden determinado.</p>
+<h2 id="7-codigo-fuente-interprete-y-resultado">7. Código fuente, intérprete y resultado</h2>
+<p>Cuando trabajamos con Python intervienen tres elementos:</p>
+<ol>
+<li><strong>Código fuente:</strong> instrucciones escritas por una persona en un archivo, normalmente con extensión <code>.py</code>.</li>
+<li><strong>Intérprete de Python:</strong> programa que procesa y ejecuta esas instrucciones.</li>
+<li><strong>Resultado:</strong> información mostrada o acción producida por el programa.</li>
+</ol>
+<pre><code class="language-text">Código fuente → Intérprete de Python → Resultado
+</code></pre>
+<p>Suele decirse que Python es un lenguaje interpretado. Esta explicación es útil como introducción, aunque el proceso interno real es más complejo: la implementación habitual de Python primero transforma el código en una representación intermedia y luego la ejecuta en una máquina virtual.</p>
+<p>Por ahora, lo importante es comprender que necesitamos tener Python instalado o utilizar un entorno que ya lo incluya.</p>
+<h2 id="8-herramientas-para-escribir-python">8. Herramientas para escribir Python</h2>
+<p>Un <strong>IDE</strong> —entorno de desarrollo integrado— reúne herramientas para escribir, ejecutar y depurar programas.</p>
+<h3 id="opcion-principal-thonny">Opción principal: Thonny</h3>
+<p>Thonny es una buena opción para comenzar porque:</p>
+<ul>
+<li>es gratuito;</li>
+<li>funciona localmente;</li>
+<li>su interfaz es sencilla;</li>
+<li>incluye una consola;</li>
+<li>permite ejecutar programas paso a paso;</li>
+<li>no exige mantener los archivos en la nube.</li>
+</ul>
+<p>Sitio oficial: <a href="https://thonny.org/">https://thonny.org/</a></p>
+<h3 id="opcion-alternativa-visual-studio-code">Opción alternativa: Visual Studio Code</h3>
+<p>Visual Studio Code es un editor más completo y extensible. Para trabajar con Python necesita que instalemos Python y su extensión correspondiente.</p>
+<ul>
+<li>Python: <a href="https://www.python.org/">https://www.python.org/</a></li>
+<li>Visual Studio Code: <a href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></li>
+</ul>
+<h3 id="opcion-temporal-en-linea-google-colab">Opción temporal en línea: Google Colab</h3>
+<p>Google Colab permite ejecutar Python desde un navegador sin instalarlo. Puede ser útil si trabajamos desde un equipo ajeno o no podemos instalar programas.</p>
+<p>Sin embargo, requiere conexión, una cuenta de Google y almacenamiento en Drive. Por eso no será nuestra única herramienta ni el lugar principal para conservar el trabajo.</p>
+<p>Sitio: <a href="https://colab.google/">https://colab.google/</a></p>
+<h2 id="9-primer-programa">9. Primer programa</h2>
+<p>Escribí esta instrucción en Thonny o en el entorno que estés utilizando:</p>
+<pre><code class="language-python">print(&quot;Hola, mundo&quot;)
+</code></pre>
+<p>Al ejecutar el programa, la consola mostrará:</p>
+<pre><code class="language-text">Hola, mundo
+</code></pre>
+<p><code>print()</code> es una función incorporada de Python que muestra información en la consola.</p>
+<p>En este ejemplo:</p>
+<ul>
+<li><code>print</code> es el nombre de la función;</li>
+<li>los paréntesis contienen la información que recibe;</li>
+<li><code>"Hola, mundo"</code> es una cadena de texto;</li>
+<li>las comillas indican dónde comienza y termina el texto.</li>
+</ul>
+<h3 id="otros-ejemplos">Otros ejemplos</h3>
+<pre><code class="language-python">print(&quot;Estoy aprendiendo Python&quot;)
+print(&quot;Curso: Taller de Programación I&quot;)
+print(2026)
+</code></pre>
+<p>La consola mostrará:</p>
+<pre><code class="language-text">Estoy aprendiendo Python
+Curso: Taller de Programación I
+2026
+</code></pre>
+<p>Python ejecuta estas instrucciones de arriba hacia abajo.</p>
+<h2 id="10-errores-frecuentes-en-el-primer-programa">10. Errores frecuentes en el primer programa</h2>
+<h3 id="olvidar-una-comilla">Olvidar una comilla</h3>
+<pre><code class="language-python">print(&quot;Hola)
+</code></pre>
+<p>Python no puede determinar dónde termina el texto.</p>
+<h3 id="usar-comillas-tipograficas">Usar comillas tipográficas</h3>
+<pre><code class="language-python">print(“Hola”)
+</code></pre>
+<p>Las comillas curvas de procesadores de texto no son válidas como delimitadores en Python. Debemos usar comillas rectas:</p>
+<pre><code class="language-python">print(&quot;Hola&quot;)
+</code></pre>
+<h3 id="escribir-mal-el-nombre-de-la-funcion">Escribir mal el nombre de la función</h3>
+<pre><code class="language-python">Print(&quot;Hola&quot;)
+</code></pre>
+<p>Python distingue mayúsculas de minúsculas. La función se llama <code>print</code>, no <code>Print</code>.</p>
+<h3 id="omitir-un-parentesis">Omitir un paréntesis</h3>
+<pre><code class="language-python">print(&quot;Hola&quot;
+</code></pre>
+<p>Todo paréntesis abierto debe cerrarse.</p>
+<h2 id="11-comentarios">11. Comentarios</h2>
+<p>Un comentario permite explicar una parte del código. Python lo ignora al ejecutar el programa.</p>
+<p>Los comentarios de una línea comienzan con <code>#</code>:</p>
+<pre><code class="language-python"># Este programa muestra un saludo
+print(&quot;Hola&quot;)
+
+print(&quot;Bienvenido&quot;)  # Comentario al final de una instrucción
+</code></pre>
+<p>Conviene escribir comentarios que expliquen una decisión o el propósito del código. No hace falta repetir literalmente lo que ya dice una instrucción clara.</p>
+<p>Las comillas triples crean cadenas de varias líneas; no constituyen una sintaxis especial de comentario. Aunque a veces se usen como anotaciones, durante esta cursada utilizaremos <code>#</code> para escribir comentarios normales.</p>
+<h2 id="12-caracteres-especiales-en-textos">12. Caracteres especiales en textos</h2>
+<p>Dentro de una cadena podemos usar secuencias especiales:</p>
+<ul>
+<li><code>\n</code> produce un salto de línea;</li>
+<li><code>\t</code> produce una tabulación.</li>
+</ul>
+<h3 id="salto-de-linea">Salto de línea</h3>
+<pre><code class="language-python">print(&quot;Nombre: Martina\nCarrera: Publicidad&quot;)
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Nombre: Martina
+Carrera: Publicidad
+</code></pre>
+<h3 id="tabulacion">Tabulación</h3>
+<pre><code class="language-python">print(&quot;Producto\tPrecio&quot;)
+print(&quot;Café\t3500&quot;)
+</code></pre>
+<p>Resultado aproximado:</p>
+<pre><code class="language-text">Producto    Precio
+Café        3500
+</code></pre>
+<h2 id="13-documentacion-y-fuentes-de-consulta">13. Documentación y fuentes de consulta</h2>
+<p>La documentación oficial es la referencia principal para conocer cómo funciona Python:</p>
+<p><a href="https://docs.python.org/es/3/">Documentación oficial de Python en español</a></p>
+<p>La documentación contiene:</p>
+<ul>
+<li>un tutorial;</li>
+<li>referencias del lenguaje;</li>
+<li>documentación de funciones y módulos;</li>
+<li>guías de instalación y uso;</li>
+<li>índices y herramientas de búsqueda.</li>
+</ul>
+<p>No es necesario memorizarla. Una habilidad importante consiste en aprender a buscar, leer ejemplos y verificar si una explicación corresponde a la versión de Python que usamos.</p>
+<p>Otros recursos de apoyo:</p>
+<ul>
+<li><a href="https://aprendeconalf.es/docencia/python/">Aprende con Alf</a></li>
+<li><a href="https://ellibrodepython.com/">El Libro de Python</a></li>
+</ul>
+<p>Cuando una respuesta proviene de un foro, un buscador o una inteligencia artificial, debemos contrastarla con la documentación y probar el código.</p>
+<h2 id="14-inteligencia-artificial-y-aprendizaje">14. Inteligencia artificial y aprendizaje</h2>
+<p>Una herramienta de inteligencia artificial puede:</p>
+<ul>
+<li>explicar un concepto de otra manera;</li>
+<li>proponer ejemplos;</li>
+<li>ayudar a interpretar un mensaje de error;</li>
+<li>formular preguntas de práctica;</li>
+<li>revisar una solución ya razonada.</li>
+</ul>
+<p>También puede:</p>
+<ul>
+<li>inventar funciones que no existen;</li>
+<li>producir código innecesariamente complejo;</li>
+<li>ocultar errores bajo una explicación convincente;</li>
+<li>resolver una actividad sin que el estudiante comprenda el procedimiento;</li>
+<li>usar contenidos que todavía no se trabajaron en clase.</li>
+</ul>
+<p>Por eso, durante la cursada aplicaremos este criterio:</p>
+<ol>
+<li>Comprender el problema.</li>
+<li>Proponer una solución propia.</li>
+<li>Usar la IA como apoyo, si hace falta.</li>
+<li>Ejecutar y probar el código.</li>
+<li>Verificar cada parte.</li>
+<li>Ser capaz de explicar la solución sin depender de la respuesta generada.</li>
+</ol>
+<p>Copiar código que no podemos explicar no equivale a aprender programación.</p>
+<h2 id="actividad-1-entrada-procesamiento-y-salida">Actividad 1: Entrada, procesamiento y salida</h2>
+<p>Identificá la entrada, el procesamiento y la salida en cada situación:</p>
+<ol>
+<li>Una aplicación calcula el promedio de tres notas.</li>
+<li>Un sistema informa el saldo disponible de una tarjeta SUBE.</li>
+<li>Un programa calcula el precio final de una compra con descuento.</li>
+<li>Una aplicación busca una película por título.</li>
+</ol>
+<h2 id="actividad-2-ordenar-el-desarrollo">Actividad 2: Ordenar el desarrollo</h2>
+<p>Ordená estas etapas:</p>
+<ul>
+<li>probar el programa;</li>
+<li>escribir el código;</li>
+<li>definir el problema;</li>
+<li>corregir los errores;</li>
+<li>diseñar el algoritmo;</li>
+<li>analizar las entradas y salidas.</li>
+</ul>
+<h2 id="actividad-3-mejorar-un-algoritmo">Actividad 3: Mejorar un algoritmo</h2>
+<p>Leé este algoritmo:</p>
+<ol>
+<li>Viajar a la facultad.</li>
+<li>Salir de casa.</li>
+<li>Consultar cómo llegar.</li>
+<li>Entrar al aula.</li>
+</ol>
+<p>Respondé:</p>
+<ol>
+<li>¿El orden es correcto?</li>
+<li>¿Qué información resulta imprecisa?</li>
+<li>Reescribí el algoritmo con al menos seis pasos.</li>
+</ol>
+<h2 id="actividad-4-disenar-una-solucion">Actividad 4: Diseñar una solución</h2>
+<p>Elegí uno de estos problemas:</p>
+<ul>
+<li>dividir los gastos de una salida;</li>
+<li>buscar una película disponible en una biblioteca local;</li>
+<li>calcular cuánto saldo necesitás para varios viajes;</li>
+<li>registrar las materias aprobadas de una carrera.</li>
+</ul>
+<p>Indicá:</p>
+<ol>
+<li>problema;</li>
+<li>datos de entrada;</li>
+<li>procesamiento;</li>
+<li>salida esperada;</li>
+<li>algoritmo de al menos cinco pasos.</li>
+</ol>
+<h2 id="actividad-5-primeras-instrucciones">Actividad 5: Primeras instrucciones</h2>
+<p>Escribí un programa que muestre, cada dato en una línea diferente:</p>
+<ul>
+<li>tu nombre;</li>
+<li>tu carrera;</li>
+<li>una actividad que te interese;</li>
+<li>el texto <code>Estoy aprendiendo Python</code>.</li>
+</ul>
+<p>Usá cuatro instrucciones <code>print()</code>.</p>
+<h2 id="actividad-6-corregir-codigo">Actividad 6: Corregir código</h2>
+<p>Cada línea contiene un error. Corregila:</p>
+<pre><code class="language-python">Print(&quot;Hola&quot;)
+print(“Buenos Aires”)
+print(&quot;Taller de Programación I&quot;
+print(&quot;Python)
+</code></pre>
+<h2 id="actividad-7-formato-de-salida">Actividad 7: Formato de salida</h2>
+<p>Usá <code>\n</code> y <code>\t</code> para intentar producir esta salida con una sola instrucción <code>print()</code>:</p>
+<pre><code class="language-text">Materia     Taller de Programación I
+Lenguaje    Python
+Modalidad   Presencial
+</code></pre>
+<h2 id="actividad-8-probar-y-depurar">Actividad 8: Probar y depurar</h2>
+<p>Observá este programa:</p>
+<pre><code class="language-python">print(&quot;Cálculo del gasto por persona&quot;)
+print(48000 / 4)
+</code></pre>
+<p>Respondé:</p>
+<ol>
+<li>¿Qué resultado esperás?</li>
+<li>¿Qué parte representa el procesamiento?</li>
+<li>¿Qué otros valores probarías?</li>
+<li>¿Qué problema aparecería si la cantidad de personas fuera cero?</li>
+</ol>
+<h2 id="autoevaluacion">Autoevaluación</h2>
+<h3 id="1-que-es-un-algoritmo">1. ¿Qué es un algoritmo?</h3>
+<ul>
+<li>A. Un error que impide ejecutar un programa.</li>
+<li>B. Una secuencia ordenada, precisa y finita de pasos.</li>
+<li>C. Un programa que solo funciona en Internet.</li>
+<li>D. Un componente físico de la computadora.</li>
+</ul>
+<h3 id="2-que-etapa-consiste-en-localizar-y-corregir-la-causa-de-un-error">2. ¿Qué etapa consiste en localizar y corregir la causa de un error?</h3>
+<ul>
+<li>A. Entrada.</li>
+<li>B. Codificación.</li>
+<li>C. Debugging.</li>
+<li>D. Salida.</li>
+</ul>
+<h3 id="3-que-instruccion-muestra-texto-en-la-consola">3. ¿Qué instrucción muestra texto en la consola?</h3>
+<ul>
+<li>A. <code>show("Hola")</code></li>
+<li>B. <code>print("Hola")</code></li>
+<li>C. <code>Print("Hola")</code></li>
+<li>D. <code>console("Hola")</code></li>
+</ul>
+<h3 id="4-cual-es-un-comentario-valido-en-python">4. ¿Cuál es un comentario válido en Python?</h3>
+<ul>
+<li>A. <code>// muestra un saludo</code></li>
+<li>B. <code>&lt;!-- muestra un saludo --&gt;</code></li>
+<li>C. <code># muestra un saludo</code></li>
+<li>D. <code>* muestra un saludo</code></li>
+</ul>
+<h3 id="5-cual-es-la-mejor-forma-de-usar-una-respuesta-producida-por-ia">5. ¿Cuál es la mejor forma de usar una respuesta producida por IA?</h3>
+<ul>
+<li>A. Copiarla sin ejecutarla.</li>
+<li>B. Entregarla si parece convincente.</li>
+<li>C. Verificarla, probarla y comprender cada parte.</li>
+<li>D. Reemplazar con ella toda la documentación.</li>
+</ul>
+<details>
+<summary>Ver respuestas</summary>
+
+1. B
+2. C
+3. B
+4. C
+5. C
+
+</details>
+
+<h2 id="sintesis">Síntesis</h2>
+<p>En este tema aprendimos que:</p>
+<ul>
+<li>programar implica analizar problemas y diseñar soluciones;</li>
+<li>un programa recibe datos, los procesa y produce resultados;</li>
+<li>un algoritmo es una secuencia ordenada, precisa y finita;</li>
+<li>probar y depurar forman parte normal del desarrollo;</li>
+<li>Python es un lenguaje libre, multiplataforma y de propósito general;</li>
+<li><code>print()</code> permite mostrar información en la consola;</li>
+<li><code>#</code> permite escribir comentarios;</li>
+<li>Thonny permite trabajar localmente y Colab puede servir como alternativa temporal;</li>
+<li>la documentación y la inteligencia artificial son recursos de apoyo que deben utilizarse de forma crítica.</li>
+</ul>
+<p>En los temas siguientes profundizaremos en programas, algoritmos, tipos de datos, variables y operaciones.</p>
+<p><a href="../../">Volver al inicio</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../js/base.js"></script>
+        <script src="../../assets/pwa.js"></script>
+        <script src="../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
