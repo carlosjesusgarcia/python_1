@@ -10,9 +10,9 @@ La materia introduce los fundamentos de la programación mediante Python. A lo l
 
 ## Clases
 
-1. [Clase 1: Presentación de la materia](clase01/index.md)
-2. [Clase 2: Programas, lenguajes de programación y algoritmos](clase02/index.md)
-3. [Clase 3: Tipos, variables, expresiones y asignaciones](clase03/01_variables_y_nomenclatura.md)
+1. [Clase 1: Presentación de la materia](clases/clase01/index.md)
+2. [Clase 2: Programas, lenguajes de programación y algoritmos](clases/clase02/index.md)
+3. [Clase 3: Tipos, variables, expresiones y asignaciones](clases/clase03/01_variables_y_nomenclatura.md)
 
 Las clases siguientes se incorporarán progresivamente a medida que avancemos en la cursada.
 

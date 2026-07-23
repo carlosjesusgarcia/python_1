@@ -8,10 +8,15 @@ theme:
 nav:
   - Inicio: index.md
   - Programa de la materia: programa.md
+
+  - Temas:
+      - "Tema 0: Introducción a la programación": temas/tema00_introduccion.md
+
   - Clases:
-      - "Clase 1: Presentación de la materia": clase01/index.md
-      - "Clase 2: Programas, lenguajes y algoritmos": clase02/index.md
-      - "Clase 3: Tipos, variables, expresiones y asignaciones": clase03/01_variables_y_nomenclatura.md
+      - "Clase 1: Presentación de la materia": clases/clase01/index.md
+      - "Clase 2: Programas, lenguajes y algoritmos": clases/clase02/index.md
+      - "Clase 3: Tipos, variables, expresiones y asignaciones": clases/clase03/01_variables_y_nomenclatura.md
+      - "Clase 4: Cadenas de texto e inmutabilidad": clases/clase04/02_cadenas_e_inmutabilidad.md
 
 extra_javascript:
   - assets/pwa.js
