@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        
+        
+        <link rel="shortcut icon" href="../../../img/favicon.ico">
+        <title>Clase 4: Cadenas de texto e inmutabilidad - Taller de Programación I</title>
+        <link href="../../../css/bootstrap.min.css" rel="stylesheet">
+        <link href="../../../css/fontawesome.min.css" rel="stylesheet">
+        <link href="../../../css/brands.min.css" rel="stylesheet">
+        <link href="../../../css/solid.min.css" rel="stylesheet">
+        <link href="../../../css/v4-font-face.min.css" rel="stylesheet">
+        <link href="../../../css/base.css" rel="stylesheet">
+        <link id="hljs-light" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github.min.css" >
+        <link id="hljs-dark" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/github-dark.min.css" disabled>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"></script>
+        <script>hljs.highlightAll();</script>
+   
+
+  <link rel="manifest" href="../../../manifest.webmanifest">
+  <link rel="apple-touch-icon" href="../../../assets/icons/apple-touch-icon.png">
+
+  <meta name="theme-color" content="#2196f3">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Taller de Programación I">
+
+    </head>
+
+    <body>
+        <div class="navbar fixed-top navbar-expand-lg navbar-dark bg-primary">
+            <div class="container">
+                <a class="navbar-brand" href="../../..">Taller de Programación I</a>
+                <!-- Expander button -->
+                <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Expanded navigation -->
+                <div id="navbar-collapse" class="navbar-collapse collapse">
+                        <!-- Main navigation -->
+                        <ul class="nav navbar-nav">
+                            <li class="nav-item">
+                                <a href="../../.." class="nav-link">Inicio</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="../../../programa/" class="nav-link">Programa de la materia</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Temas</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../../temas/tema00_introduccion/" class="dropdown-item">Tema 0: Introducción a la programación</a>
+</li>
+                                </ul>
+                            </li>
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link dropdown-toggle active" aria-current="page" role="button" data-bs-toggle="dropdown"  aria-expanded="false">Clases</a>
+                                <ul class="dropdown-menu">
+                                    
+<li>
+    <a href="../../clase01/" class="dropdown-item">Clase 1: Presentación de la materia</a>
+</li>
+                                    
+<li>
+    <a href="../../clase02/" class="dropdown-item">Clase 2: Programas, lenguajes y algoritmos</a>
+</li>
+                                    
+<li>
+    <a href="../../clase03/01_variables_y_nomenclatura/" class="dropdown-item">Clase 3: Tipos, variables, expresiones y asignaciones</a>
+</li>
+                                    
+<li>
+    <a href="./" class="dropdown-item active" aria-current="page">Clase 4: Cadenas de texto e inmutabilidad</a>
+</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    <ul class="nav navbar-nav ms-md-auto">
+                        <li class="nav-item">
+                            <a href="#" class="nav-link" data-bs-toggle="modal" data-bs-target="#mkdocs_search_modal">
+                                <i class="fa fa-search"></i> Search
+                            </a>
+                        </li>
+                            <li class="nav-item">
+                                <a rel="prev" href="../../clase03/01_variables_y_nomenclatura/" class="nav-link">
+                                    <i class="fa fa-arrow-left"></i> Previous
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a rel="next" class="nav-link disabled">
+                                    Next <i class="fa fa-arrow-right"></i>
+                                </a>
+                            </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                    <div class="col-md-3"><div class="navbar-expand-md bs-sidebar hidden-print affix" role="complementary">
+    <div class="navbar-header">
+        <button type="button" class="navbar-toggler collapsed" data-bs-toggle="collapse" data-bs-target="#toc-collapse" title="Table of Contents">
+            <span class="fa fa-angle-down"></span>
+        </button>
+    </div>
+
+    
+    <div id="toc-collapse" class="navbar-collapse collapse card bg-body-tertiary">
+        <ul class="nav flex-column">
+            
+            <li class="nav-item" data-bs-level="1"><a href="#clase-4-cadenas-de-texto-e-inmutabilidad" class="nav-link">Clase 4: Cadenas de texto e inmutabilidad</a>
+              <ul class="nav flex-column">
+            <li class="nav-item" data-bs-level="2"><a href="#objetivos-de-la-clase" class="nav-link">Objetivos de la clase</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#1-que-es-una-cadena" class="nav-link">1. ¿Qué es una cadena?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#2-cadenas-de-varias-lineas" class="nav-link">2. Cadenas de varias líneas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#3-comillas-dentro-de-una-cadena" class="nav-link">3. Comillas dentro de una cadena</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#4-combinar-cadenas" class="nav-link">4. Combinar cadenas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#5-repetir-cadenas" class="nav-link">5. Repetir cadenas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#6-comprobar-si-un-texto-aparece-en-una-cadena" class="nav-link">6. Comprobar si un texto aparece en una cadena</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#7-longitud-de-una-cadena" class="nav-link">7. Longitud de una cadena</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#8-indices" class="nav-link">8. Índices</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#9-indices-negativos" class="nav-link">9. Índices negativos</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#10-que-significa-que-una-cadena-sea-inmutable" class="nav-link">10. ¿Qué significa que una cadena sea inmutable?</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-1-reconocer-cadenas" class="nav-link">Actividad 1: reconocer cadenas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-2-crear-cadenas" class="nav-link">Actividad 2: crear cadenas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-3-elegir-las-comillas" class="nav-link">Actividad 3: elegir las comillas</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-4-combinar-y-repetir" class="nav-link">Actividad 4: combinar y repetir</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-5-utilizar-in" class="nav-link">Actividad 5: utilizar in</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-6-longitud-e-indices" class="nav-link">Actividad 6: longitud e índices</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-7-analizar-la-inmutabilidad" class="nav-link">Actividad 7: analizar la inmutabilidad</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#actividad-8-programa-integrador" class="nav-link">Actividad 8: programa integrador</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#preguntas-de-opcion-multiple" class="nav-link">Preguntas de opción múltiple</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+            <li class="nav-item" data-bs-level="2"><a href="#sintesis" class="nav-link">Síntesis</a>
+              <ul class="nav flex-column">
+              </ul>
+            </li>
+              </ul>
+            </li>
+        </ul>
+    </div>
+</div></div>
+                    <div class="col-md-9" role="main">
+
+<h1 id="clase-4-cadenas-de-texto-e-inmutabilidad">Clase 4: Cadenas de texto e inmutabilidad</h1>
+<h2 id="objetivos-de-la-clase">Objetivos de la clase</h2>
+<p>Al finalizar esta parte de la clase, se espera que puedas:</p>
+<ul>
+<li>reconocer una cadena de texto;</li>
+<li>crear cadenas con comillas simples, dobles y triples;</li>
+<li>incluir comillas dentro de una cadena;</li>
+<li>combinar y repetir cadenas;</li>
+<li>comprobar si un texto aparece dentro de otro;</li>
+<li>obtener la longitud de una cadena;</li>
+<li>acceder a caracteres mediante índices positivos y negativos;</li>
+<li>explicar por qué las cadenas son inmutables;</li>
+<li>diferenciar la modificación de un objeto de la reasignación de una variable.</li>
+</ul>
+<h2 id="1-que-es-una-cadena">1. ¿Qué es una cadena?</h2>
+<p>Una <strong>cadena de texto</strong> es una secuencia de caracteres. En Python, su tipo de dato es <code>str</code>, abreviatura de <em>string</em>.</p>
+<p>Para crear una cadena, el texto se escribe entre comillas simples o dobles:</p>
+<pre><code class="language-python">nombre = &quot;Tomás&quot;
+barrio = 'Palermo'
+carrera = &quot;Comunicación Digital&quot;
+</code></pre>
+<p>Las comillas delimitan la cadena: indican dónde comienza y dónde termina.</p>
+<p>Python trata las comillas simples y las comillas dobles de la misma manera. Las dos formas son válidas:</p>
+<pre><code class="language-python">universidad = 'UADE'
+materia = &quot;Taller de Programación I&quot;
+</code></pre>
+<p>Es conveniente mantener un criterio uniforme dentro de cada programa. En estos apuntes utilizaremos principalmente comillas dobles.</p>
+<h3 id="las-cadenas-pueden-contener-distintos-caracteres">Las cadenas pueden contener distintos caracteres</h3>
+<p>Una cadena puede incluir:</p>
+<ul>
+<li>letras;</li>
+<li>espacios;</li>
+<li>números;</li>
+<li>signos de puntuación;</li>
+<li>símbolos.</li>
+</ul>
+<pre><code class="language-python">nombre_usuario = &quot;tomas_20&quot;
+direccion = &quot;Lima 775&quot;
+precio_mostrado = &quot;$18.500&quot;
+mensaje = &quot;¡Nos vemos a las 20:30!&quot;
+</code></pre>
+<p>Aunque una cadena contenga números, sigue siendo texto:</p>
+<pre><code class="language-python">edad = 20
+edad_como_texto = &quot;20&quot;
+
+print(type(edad))            # &lt;class 'int'&gt;
+print(type(edad_como_texto)) # &lt;class 'str'&gt;
+</code></pre>
+<p><code>20</code> es un número entero. <code>"20"</code> es una cadena formada por dos caracteres.</p>
+<h2 id="2-cadenas-de-varias-lineas">2. Cadenas de varias líneas</h2>
+<p>Para escribir una cadena que ocupa varias líneas, se utilizan tres comillas dobles o tres comillas simples:</p>
+<pre><code class="language-python">descripcion = &quot;&quot;&quot;Departamento de dos ambientes
+en Palermo, cerca del subte
+y con balcón.&quot;&quot;&quot;
+
+print(descripcion)
+</code></pre>
+<p>También es válido:</p>
+<pre><code class="language-python">mensaje = '''Hola:
+La clase comienza a las 18:30.
+Nos vemos en el aula.'''
+</code></pre>
+<p>Las comillas triples conservan los saltos de línea incluidos en el texto.</p>
+<h2 id="3-comillas-dentro-de-una-cadena">3. Comillas dentro de una cadena</h2>
+<p>Si una cadena contiene comillas, existen dos alternativas.</p>
+<h3 id="utilizar-el-otro-tipo-de-comillas">Utilizar el otro tipo de comillas</h3>
+<p>Si el texto contiene una comilla simple, podemos delimitar la cadena con comillas dobles:</p>
+<pre><code class="language-python">mensaje = &quot;Hoy vamos al café de Julián.&quot;
+</code></pre>
+<p>Este recurso resulta especialmente útil con palabras que contienen apóstrofos en otros idiomas:</p>
+<pre><code class="language-python">nombre_local = &quot;John's Coffee&quot;
+</code></pre>
+<p>Si el texto contiene comillas dobles, podemos delimitar la cadena con comillas simples:</p>
+<pre><code class="language-python">respuesta = 'Lucía dijo: &quot;Llego después de la facultad&quot;.'
+</code></pre>
+<h3 id="escapar-las-comillas">Escapar las comillas</h3>
+<p>Otra posibilidad es colocar una barra invertida (<code>\</code>) antes de la comilla que forma parte del texto:</p>
+<pre><code class="language-python">nombre_local = 'John\'s Coffee'
+respuesta = &quot;Lucía dijo: \&quot;Llego después de la facultad\&quot;.&quot;
+</code></pre>
+<p>La barra invertida indica que esa comilla pertenece al contenido y no marca el final de la cadena.</p>
+<h2 id="4-combinar-cadenas">4. Combinar cadenas</h2>
+<p>El operador <code>+</code> permite <strong>concatenar</strong>, es decir, unir cadenas:</p>
+<pre><code class="language-python">nombre = &quot;Martín&quot;
+apellido = &quot;Rodríguez&quot;
+nombre_completo = nombre + &quot; &quot; + apellido
+
+print(nombre_completo)
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Martín Rodríguez
+</code></pre>
+<p>El espacio entre comillas también es una cadena. Sin ese espacio, el resultado sería <code>MartínRodríguez</code>.</p>
+<p>Otro ejemplo:</p>
+<pre><code class="language-python">linea_subte = &quot;Línea &quot; + &quot;D&quot;
+destino = &quot;Voy hasta &quot; + &quot;Catedral&quot;
+
+print(linea_subte)
+print(destino)
+</code></pre>
+<p>Solo se pueden concatenar directamente valores de tipo <code>str</code>:</p>
+<pre><code class="language-python">edad = 20
+mensaje = &quot;Tengo &quot; + edad + &quot; años&quot;
+</code></pre>
+<p>Ese código produce un error porque intenta combinar una cadena con un número entero. Más adelante aprenderemos a convertir datos y a construir mensajes con distintos tipos de valores.</p>
+<h2 id="5-repetir-cadenas">5. Repetir cadenas</h2>
+<p>El operador <code>*</code> permite repetir una cadena una cantidad determinada de veces:</p>
+<pre><code class="language-python">separador = &quot;-&quot; * 30
+print(separador)
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">------------------------------
+</code></pre>
+<p>También se puede repetir una palabra:</p>
+<pre><code class="language-python">recordatorio = &quot;Python &quot; * 3
+print(recordatorio)
+</code></pre>
+<p>Resultado:</p>
+<pre><code class="language-text">Python Python Python 
+</code></pre>
+<p>El número indica cuántas veces se repite la cadena.</p>
+<h2 id="6-comprobar-si-un-texto-aparece-en-una-cadena">6. Comprobar si un texto aparece en una cadena</h2>
+<p>El operador <code>in</code> permite verificar si una cadena aparece dentro de otra. El resultado es un valor booleano: <code>True</code> o <code>False</code>.</p>
+<pre><code class="language-python">descripcion = &quot;Departamento luminoso en Palermo&quot;
+
+print(&quot;Palermo&quot; in descripcion)  # True
+print(&quot;balcón&quot; in descripcion)   # False
+print(&quot;luz&quot; in descripcion)      # False
+print(&quot;a&quot; in descripcion)        # True
+</code></pre>
+<p>Python busca una coincidencia exacta. Distingue entre mayúsculas y minúsculas:</p>
+<pre><code class="language-python">materia = &quot;Programación&quot;
+
+print(&quot;Programación&quot; in materia)  # True
+print(&quot;programación&quot; in materia)  # False
+</code></pre>
+<p>También importan los espacios y las tildes.</p>
+<h2 id="7-longitud-de-una-cadena">7. Longitud de una cadena</h2>
+<p>La función incorporada <code>len()</code> devuelve la cantidad de caracteres de una cadena:</p>
+<pre><code class="language-python">barrio = &quot;Belgrano&quot;
+print(len(barrio))  # 8
+</code></pre>
+<p>Los espacios y los signos también cuentan como caracteres:</p>
+<pre><code class="language-python">mensaje = &quot;Hola, Tomás&quot;
+print(len(mensaje))  # 11
+</code></pre>
+<p>En <code>"Hola, Tomás"</code> se cuentan las letras, la coma y el espacio.</p>
+<p>Una cadena vacía no contiene caracteres:</p>
+<pre><code class="language-python">texto = &quot;&quot;
+print(len(texto))  # 0
+</code></pre>
+<h2 id="8-indices">8. Índices</h2>
+<p>Cada carácter de una cadena ocupa una posición llamada <strong>índice</strong>.</p>
+<p>En Python, el primer índice es <code>0</code>, no <code>1</code>:</p>
+<table>
+<thead>
+<tr>
+<th>Carácter</th>
+<th style="text-align: right;">P</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">t</th>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">o</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Índice</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+</tr>
+</tbody>
+</table>
+<p>Para acceder a un carácter, se escribe el nombre de la variable seguido del índice entre corchetes:</p>
+<pre><code class="language-python">lenguaje = &quot;Python&quot;
+
+print(lenguaje[0])  # P
+print(lenguaje[1])  # y
+print(lenguaje[5])  # n
+</code></pre>
+<h3 id="error-por-indice-inexistente">Error por índice inexistente</h3>
+<p>La cadena <code>"Python"</code> tiene seis caracteres, pero sus índices van de <code>0</code> a <code>5</code>.</p>
+<pre><code class="language-python">lenguaje = &quot;Python&quot;
+print(lenguaje[6])
+</code></pre>
+<p>Ese código produce un <code>IndexError</code> porque la posición <code>6</code> no existe.</p>
+<h2 id="9-indices-negativos">9. Índices negativos</h2>
+<p>Python también permite contar desde el final de la cadena mediante índices negativos.</p>
+<p>El índice <code>-1</code> corresponde al último carácter:</p>
+<table>
+<thead>
+<tr>
+<th>Carácter</th>
+<th style="text-align: right;">P</th>
+<th style="text-align: right;">y</th>
+<th style="text-align: right;">t</th>
+<th style="text-align: right;">h</th>
+<th style="text-align: right;">o</th>
+<th style="text-align: right;">n</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Índice positivo</td>
+<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">5</td>
+</tr>
+<tr>
+<td>Índice negativo</td>
+<td style="text-align: right;">-6</td>
+<td style="text-align: right;">-5</td>
+<td style="text-align: right;">-4</td>
+<td style="text-align: right;">-3</td>
+<td style="text-align: right;">-2</td>
+<td style="text-align: right;">-1</td>
+</tr>
+</tbody>
+</table>
+<pre><code class="language-python">lenguaje = &quot;Python&quot;
+
+print(lenguaje[-1])  # n
+print(lenguaje[-2])  # o
+print(lenguaje[-6])  # P
+</code></pre>
+<p>Los índices negativos son útiles cuando necesitamos acceder a los últimos caracteres sin calcular previamente la longitud de la cadena.</p>
+<h2 id="10-que-significa-que-una-cadena-sea-inmutable">10. ¿Qué significa que una cadena sea inmutable?</h2>
+<p>En Python, todos los datos se representan mediante objetos. Algunos objetos son <strong>mutables</strong> y otros son <strong>inmutables</strong>.</p>
+<p>Un objeto inmutable no puede modificarse después de haber sido creado.</p>
+<p>Las cadenas son inmutables. Podemos consultar cualquiera de sus caracteres:</p>
+<pre><code class="language-python">saludo = &quot;hola&quot;
+print(saludo[0])  # h
+</code></pre>
+<p>Sin embargo, no podemos reemplazar directamente uno de ellos:</p>
+<pre><code class="language-python">saludo = &quot;hola&quot;
+saludo[0] = &quot;H&quot;
+</code></pre>
+<p>Python produce este error:</p>
+<pre><code class="language-text">TypeError: 'str' object does not support item assignment
+</code></pre>
+<p>El error indica que una cadena no permite asignar un nuevo valor a una posición individual.</p>
+<h3 id="reasignar-no-es-modificar">Reasignar no es modificar</h3>
+<p>Aunque la cadena sea inmutable, una variable puede recibir una nueva cadena:</p>
+<pre><code class="language-python">saludo = &quot;hola&quot;
+saludo = &quot;Hola&quot;
+
+print(saludo)  # Hola
+</code></pre>
+<p>En este caso no se modificó la cadena <code>"hola"</code>. La variable <code>saludo</code> fue <strong>reasignada</strong> y pasó a referirse a otra cadena: <code>"Hola"</code>.</p>
+<p>La diferencia es importante:</p>
+<ul>
+<li><code>saludo[0] = "H"</code> intenta modificar un carácter del objeto existente y produce un error.</li>
+<li><code>saludo = "Hola"</code> asigna un nuevo objeto a la variable y es válido.</li>
+</ul>
+<p>Otros tipos inmutables de Python son <code>int</code>, <code>float</code>, <code>bool</code>, <code>tuple</code> y <code>range</code>. Algunos de ellos se estudiarán más adelante.</p>
+<h2 id="actividad-1-reconocer-cadenas">Actividad 1: reconocer cadenas</h2>
+<p>Indicá cuáles de los siguientes valores son cadenas:</p>
+<pre><code class="language-python">&quot;20&quot;
+20
+'Buenos Aires'
+18.5
+&quot;18.5&quot;
+True
+&quot;True&quot;
+&quot;&quot;
+</code></pre>
+<p>Para cada caso, explicá qué elemento permite reconocer el tipo de dato.</p>
+<h2 id="actividad-2-crear-cadenas">Actividad 2: crear cadenas</h2>
+<p>Creá variables para guardar los siguientes datos:</p>
+<ol>
+<li>Tu nombre y apellido.</li>
+<li>El barrio en el que vivís.</li>
+<li>La carrera que estudiás.</li>
+<li>Una plataforma de streaming que utilices.</li>
+<li>El nombre de un café o restaurante de CABA.</li>
+</ol>
+<p>Mostrá cada variable mediante <code>print()</code>.</p>
+<h2 id="actividad-3-elegir-las-comillas">Actividad 3: elegir las comillas</h2>
+<p>Corregí las cadenas para que sean válidas. Utilizá el tipo opuesto de comillas o caracteres de escape.</p>
+<pre><code class="language-python">mensaje_1 = 'Martín dijo: 'Nos vemos en Palermo'.'
+mensaje_2 = &quot;El local se llama &quot;Café Central&quot;.&quot;
+mensaje_3 = 'I'm studying Python'
+mensaje_4 = &quot;La profesora preguntó: &quot;¿Terminaron el ejercicio?&quot;&quot;
+</code></pre>
+<h2 id="actividad-4-combinar-y-repetir">Actividad 4: combinar y repetir</h2>
+<p>Escribí un programa que:</p>
+<ol>
+<li>Guarde un nombre y un apellido en variables separadas.</li>
+<li>Los combine en una variable llamada <code>nombre_completo</code>.</li>
+<li>Muestre una línea formada por cuarenta signos <code>=</code>.</li>
+<li>Muestre el nombre completo.</li>
+<li>Vuelva a mostrar la línea.</li>
+</ol>
+<p>El resultado debe tener esta forma:</p>
+<pre><code class="language-text">========================================
+Sofía Fernández
+========================================
+</code></pre>
+<h2 id="actividad-5-utilizar-in">Actividad 5: utilizar <code>in</code></h2>
+<p>Observá el siguiente código y escribí el resultado de cada <code>print()</code> sin ejecutarlo:</p>
+<pre><code class="language-python">descripcion = &quot;Café tranquilo con wifi en Recoleta&quot;
+
+print(&quot;wifi&quot; in descripcion)
+print(&quot;Palermo&quot; in descripcion)
+print(&quot;Café&quot; in descripcion)
+print(&quot;café&quot; in descripcion)
+print(&quot;Recoleta&quot; in descripcion)
+print(&quot;leta&quot; in descripcion)
+</code></pre>
+<p>Después, ejecutá el programa para comprobar tus respuestas.</p>
+<h2 id="actividad-6-longitud-e-indices">Actividad 6: longitud e índices</h2>
+<p>Dada la siguiente cadena:</p>
+<pre><code class="language-python">transporte = &quot;Subte&quot;
+</code></pre>
+<p>Respondé:</p>
+<ol>
+<li>¿Cuántos caracteres contiene?</li>
+<li>¿Qué carácter se encuentra en el índice <code>0</code>?</li>
+<li>¿Qué carácter se encuentra en el índice <code>3</code>?</li>
+<li>¿Qué carácter se encuentra en el índice <code>-1</code>?</li>
+<li>¿Qué carácter se encuentra en el índice <code>-4</code>?</li>
+<li>¿Qué índices positivos existen en esta cadena?</li>
+<li>¿Qué ocurrirá si se intenta acceder a <code>transporte[5]</code>?</li>
+</ol>
+<h2 id="actividad-7-analizar-la-inmutabilidad">Actividad 7: analizar la inmutabilidad</h2>
+<p>Observá los dos programas.</p>
+<h3 id="programa-a">Programa A</h3>
+<pre><code class="language-python">barrio = &quot;palermo&quot;
+barrio[0] = &quot;P&quot;
+print(barrio)
+</code></pre>
+<h3 id="programa-b">Programa B</h3>
+<pre><code class="language-python">barrio = &quot;palermo&quot;
+barrio = &quot;Palermo&quot;
+print(barrio)
+</code></pre>
+<p>Respondé:</p>
+<ol>
+<li>¿Cuál de los dos programas produce un error?</li>
+<li>¿Qué intenta hacer el programa que falla?</li>
+<li>¿Qué hace la reasignación del Programa B?</li>
+<li>¿Por qué el Programa B no contradice la inmutabilidad de las cadenas?</li>
+</ol>
+<h2 id="actividad-8-programa-integrador">Actividad 8: programa integrador</h2>
+<p>Escribí un programa que guarde:</p>
+<ul>
+<li>el nombre de una película;</li>
+<li>el nombre del cine;</li>
+<li>el barrio;</li>
+<li>una fila representada por una letra;</li>
+<li>un número de asiento escrito como cadena.</li>
+</ul>
+<p>Después:</p>
+<ol>
+<li>Combiná la fila y el asiento en una sola cadena.</li>
+<li>Creá un separador repitiendo un carácter.</li>
+<li>Mostrá todos los datos.</li>
+<li>Mostrá la cantidad de caracteres del nombre de la película.</li>
+<li>Mostrá la primera y la última letra del barrio.</li>
+<li>Comprobá mediante <code>in</code> si la palabra <code>"Cine"</code> aparece en el nombre del cine.</li>
+</ol>
+<h2 id="preguntas-de-opcion-multiple">Preguntas de opción múltiple</h2>
+<h3 id="1-cual-de-estos-valores-es-una-cadena">1. ¿Cuál de estos valores es una cadena?</h3>
+<ul>
+<li>[ ] <code>20</code></li>
+<li>[ ] <code>18.5</code></li>
+<li>[ ] <code>"20"</code></li>
+<li>[ ] <code>True</code></li>
+</ul>
+<h3 id="2-como-se-define-una-cadena-de-varias-lineas">2. ¿Cómo se define una cadena de varias líneas?</h3>
+<ul>
+<li>[ ] Mediante paréntesis.</li>
+<li>[ ] Mediante corchetes.</li>
+<li>[ ] Mediante tres comillas simples o tres comillas dobles.</li>
+<li>[ ] Mediante el operador <code>*</code>.</li>
+</ul>
+<h3 id="3-que-resultado-produce-lensubte-d">3. ¿Qué resultado produce <code>len("Subte D")</code>?</h3>
+<ul>
+<li>[ ] <code>6</code></li>
+<li>[ ] <code>7</code></li>
+<li>[ ] <code>8</code></li>
+<li>[ ] Produce un error.</li>
+</ul>
+<h3 id="4-si-texto-python-que-expresion-obtiene-la-letra-p">4. Si <code>texto = "Python"</code>, ¿qué expresión obtiene la letra <code>P</code>?</h3>
+<ul>
+<li>[ ] <code>texto[1]</code></li>
+<li>[ ] <code>texto[0]</code></li>
+<li>[ ] <code>texto[-1]</code></li>
+<li>[ ] <code>texto(0)</code></li>
+</ul>
+<h3 id="5-si-texto-python-que-expresion-obtiene-la-letra-n">5. Si <code>texto = "Python"</code>, ¿qué expresión obtiene la letra <code>n</code>?</h3>
+<ul>
+<li>[ ] <code>texto[6]</code></li>
+<li>[ ] <code>texto[-1]</code></li>
+<li>[ ] <code>texto[-6]</code></li>
+<li>[ ] <code>texto[0]</code></li>
+</ul>
+<h3 id="6-que-devuelve-subte-in-viaje-en-subte">6. ¿Qué devuelve <code>"subte" in "Viaje en subte"</code>?</h3>
+<ul>
+<li>[ ] <code>True</code></li>
+<li>[ ] <code>False</code></li>
+<li>[ ] <code>"subte"</code></li>
+<li>[ ] Produce un error.</li>
+</ul>
+<h3 id="7-que-hace-el-operador-cuando-se-aplica-a-dos-cadenas">7. ¿Qué hace el operador <code>+</code> cuando se aplica a dos cadenas?</h3>
+<ul>
+<li>[ ] Las compara.</li>
+<li>[ ] Las concatena.</li>
+<li>[ ] Las convierte en números.</li>
+<li>[ ] Repite la primera cadena.</li>
+</ul>
+<h3 id="8-que-resultado-produce-ba-3">8. ¿Qué resultado produce <code>"BA" * 3</code>?</h3>
+<ul>
+<li>[ ] <code>"BA3"</code></li>
+<li>[ ] <code>"BABABA"</code></li>
+<li>[ ] <code>6</code></li>
+<li>[ ] Produce un error.</li>
+</ul>
+<h3 id="9-que-significa-que-una-cadena-sea-inmutable">9. ¿Qué significa que una cadena sea inmutable?</h3>
+<ul>
+<li>[ ] Que una variable nunca puede recibir otra cadena.</li>
+<li>[ ] Que sus caracteres no pueden modificarse directamente.</li>
+<li>[ ] Que no puede mostrarse mediante <code>print()</code>.</li>
+<li>[ ] Que solo puede contener letras.</li>
+</ul>
+<h3 id="10-cual-de-estas-instrucciones-es-valida">10. ¿Cuál de estas instrucciones es válida?</h3>
+<ul>
+<li>[ ] <code>nombre = "juan"; nombre[0] = "J"</code></li>
+<li>[ ] <code>nombre = "juan"; nombre = "Juan"</code></li>
+<li>[ ] <code>nombre = "juan"; nombre(0) = "J"</code></li>
+<li>[ ] <code>nombre = "juan"; nombre[-1] = "n"</code></li>
+</ul>
+<h2 id="sintesis">Síntesis</h2>
+<p>En esta parte de la clase aprendimos que:</p>
+<ul>
+<li>una cadena es una secuencia de caracteres de tipo <code>str</code>;</li>
+<li>las cadenas pueden delimitarse con comillas simples o dobles;</li>
+<li>las comillas triples permiten escribir cadenas de varias líneas;</li>
+<li>una barra invertida permite incluir ciertas comillas dentro del texto;</li>
+<li><code>+</code> combina cadenas y <code>*</code> las repite;</li>
+<li><code>in</code> comprueba si un texto aparece dentro de otro;</li>
+<li><code>len()</code> devuelve la cantidad de caracteres;</li>
+<li>el primer carácter tiene índice <code>0</code>;</li>
+<li>los índices negativos permiten contar desde el final;</li>
+<li>las cadenas son inmutables;</li>
+<li>reasignar una variable no significa modificar el objeto original.</li>
+</ul>
+<hr />
+<p><a href="01_operaciones_con_numeros.md">Anterior: Clase 4 - Operaciones con números</a></p>
+<p><a href="../clase05/index.md">Siguiente: Clase 5 - Control de flujo</a></p></div>
+            </div>
+        </div>
+
+        <footer class="col-md-12">
+            <hr>
+            <p>Documentation built with <a href="https://www.mkdocs.org/">MkDocs</a>.</p>
+        </footer>
+        <script src="../../../js/bootstrap.bundle.min.js"></script>
+        <script>
+            var base_url = "../../..",
+                shortcuts = {"help": 191, "next": 78, "previous": 80, "search": 83};
+        </script>
+        <script src="../../../js/base.js"></script>
+        <script src="../../../assets/pwa.js"></script>
+        <script src="../../../search/main.js"></script>
+
+        <div class="modal" id="mkdocs_search_modal" tabindex="-1" role="dialog" aria-labelledby="searchModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="searchModalLabel">Search</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>From here you can search these documents. Enter your search terms below.</p>
+                <form>
+                    <div class="form-group">
+                        <input type="search" class="form-control" placeholder="Search..." id="mkdocs-search-query" title="Type search term here">
+                    </div>
+                </form>
+                <div id="mkdocs-search-results" data-no-results-text="No results found"></div>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div><div class="modal" id="mkdocs_keyboard_modal" tabindex="-1" role="dialog" aria-labelledby="keyboardModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title" id="keyboardModalLabel">Keyboard Shortcuts</h4>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <table class="table">
+                <thead>
+                  <tr>
+                    <th style="width: 20%;">Keys</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td class="help shortcut"><kbd>?</kbd></td>
+                    <td>Open this help</td>
+                  </tr>
+                  <tr>
+                    <td class="next shortcut"><kbd>n</kbd></td>
+                    <td>Next page</td>
+                  </tr>
+                  <tr>
+                    <td class="prev shortcut"><kbd>p</kbd></td>
+                    <td>Previous page</td>
+                  </tr>
+                  <tr>
+                    <td class="search shortcut"><kbd>s</kbd></td>
+                    <td>Search</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="modal-footer">
+            </div>
+        </div>
+    </div>
+</div>
+
+    </body>
+</html>
